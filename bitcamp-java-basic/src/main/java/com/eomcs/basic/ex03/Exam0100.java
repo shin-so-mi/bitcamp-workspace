@@ -20,7 +20,7 @@ class Exam0100 {
         System.out.println(0116);
         System.out.println(0x4e);
         System.out.println(0b01001110);
-
+        
 
 
 
