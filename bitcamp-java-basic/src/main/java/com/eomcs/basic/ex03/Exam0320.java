@@ -7,7 +7,7 @@ package com.eomcs.basic.ex03;
 
 
 
-class Exam0100 {
+class Exam0320 {
     public static void main(String[] args) {
     
         //출력 명령문

@@ -5,7 +5,7 @@
 
 package com.eomcs.basic.ex03;
 
-class Exam0500 {
+class Exam0420 {
   public static void main(String[] args) {
     
     //참을 표현할 때는 true, 거짓을 표현할 때는 'false'이다.

@@ -9,11 +9,11 @@ public static void main(String[] args) {
 System.out.println(78);
 System.out.println(-78);
 System.out.println(0116);
-System.out.println1(0x4e);
+System.out.println(0x4e);
 
 
 
-@override
+//@override
 
 
 
