@@ -31,3 +31,18 @@
 - gradle init 실행하여 프로잭트폴더를 초기허ㅏ시ㅣ킨다 
 -실습
 - Hello2.java
+
+
+
+### 7일차
+ - mac Os  환경 구축하기
+ - bush쉘을 zsh로   변경하기
+ - oh-my-zsh 플러그인을 추가하기
+
+ -5일차 과제 풀이
+ -자바프로젝트( bitcamp-java-project)만들기
+ - 자바프로젝트 실행하기
+ ->gradle run
+ -자바프로젝트 빌드하기
+ ->gradle build
+ -ECLIPCE IDE 로 프러젝트 가져오기
