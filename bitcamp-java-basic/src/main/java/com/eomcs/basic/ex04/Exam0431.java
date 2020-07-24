@@ -12,10 +12,16 @@ public static void main(String[] args) {
    //c = -1;
    //c = 65536; (초과했기떄문에)
    
+
     
+      int a = 0x23;
+      for (int i = 1; i < 5; i++) {
+        
+        System.out.println(a + i);
+    }
     
   }
   
   
 }
-}
+
