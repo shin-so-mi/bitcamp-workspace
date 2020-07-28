@@ -1,62 +1,41 @@
 package com.eomcs.pms;
 
+import java.sql.Date;
 import java.util.Scanner;
 
 public class App3 {
 
   public static void main(String[] args) {
+    System.out.printf("[%s]\n", "작업");
     
     
-    java.util.Scanner KeyInput = new java.util.Scanner(System.in);
-   
-    System.out.println("[작업]");
     
-    System.out.print("프로젝트명?: "); 
-    String no = KeyInput.nextLine();
+    static int count = 0;
+    static final int MAX_LENGTH = 5;
+    Scanner KeyInput = new Scanner(System.in);
     
-    System.out.print("번호?: ");
-    String str = KeyInput.nextLine();
-    int nou = Integer.parseInt(str);
+    int[] no = new int[MAX_LENGTH];
+    String[] name = new String[MAX_LENGTH];
+    String[] content = new String[MAX_LENGTH];
+    Date[] now = new Date[MAX_LENGTH];
+    String[] state = new String[MAX_LENGTH];
+    String[] member = new String[MAX_LENGTH];
     
-    System.out.print("내용?: "); 
-    String content = KeyInput.nextLine();  
-
-    System.out.print("상태?: "); 
-    String state = KeyInput.nextLine(); 
     
-    System.out.print("종료일: ");
-    java.sql.Date endDate = java.sql.Date.valueOf(KeyInput.nextLine());
     
-    switch (state) {
-      case "0":
-        System.out.println("신규");
-        break;
-        
-      case "1":
-      System.out.println("진행중");
-      break;
       
-       default:
-         System.out.println("완료");
-         
-    }
-    
-    
-    
-     KeyInput.close();
-    
+      
      
-    System.out.println("-------------");     System.out.printf("프로잭트: %s\n" , no);
-     System.out.printf("번호: %s\n" , nou);
-     System.out.printf("내용: %s\n" , content);
-    System.out.printf("종료일: %s\n" , endDate.toString());
-    System.out.printf("상태: %s\n" , state);
-     
-   
+      
+      
     
-    
-    
-    
+      
+      
+      
+      
+      System.out.print("완료일: %s\n", "2020-01-20");
+      System.out.print("상태: %s\n", "진행중");
+      System.out.print("담당자: %s\n", "홍길동");
     
     
   }
