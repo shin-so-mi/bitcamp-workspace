@@ -34,7 +34,7 @@ public class Exam0450 {
     lang[6] = true;
     lang[7] = false;
 
-    // 비트 연산자 사용 후
+    // 비트 연산자 사용 후 굳이 변수선언ㅇ을 하지않음
     // => 4바이트 변수 한 개만 있으면 
     //    최대 32개의 데이터를 저장할 수 있다.
     // 어떻게?
@@ -57,7 +57,7 @@ public class Exam0450 {
     // 다음과 같이 특정 비트의 값이 1인 수를 OR(|) 연산하라!
     lang2 |= 0x80; // c = true 
     // 00000000 | 10000000 = 10000000
-
+    //|= 비트단위로 사용할떄사용
     //lang2 |= 0x00; // c++ = false
 
     lang2 |= 0x20; // java = true
@@ -76,6 +76,6 @@ public class Exam0450 {
     //lang2 |= 0x00; // css = false
 
     // 실무에서는 이렇게 비트를 이용하여 여러 개의 true/false 상태를 저장하기도 한다.
-
+    System.out.println(Integer.toBinaryString(lang2));
   }
 }

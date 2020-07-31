@@ -25,7 +25,7 @@ public class Exam0142 {
     System.out.println(r2); // int(4byte) + int(4byte) = int(4byte)
     // 해결 안됨!
     //해결책
-    r2 = (long)x + (long)y;
+    r2 = (long)x + (long)y; 
        System.out.println(r2);
     // r2의 출력 결과를 보면 42억이 출력되는 것이 아니라 -2가 출력된다.
     // 이유?

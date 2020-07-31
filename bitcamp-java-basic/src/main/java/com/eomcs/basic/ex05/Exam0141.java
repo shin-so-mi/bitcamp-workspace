@@ -9,7 +9,7 @@ public class Exam0141 {
     
     int i = 5;
     int j = 2;
-    float r = i / j; // int와 int의 연산 결과는 항상 int이다.
+    float r = (float)i / (float)j; // int와 int의 연산 결과는 항상 int이다.
     // 따라서 r 변수에 넣기 전에 
     // 이미 결과는 정수 2가 된다.
     // 정수 2를 float 변수에 넣으면 
