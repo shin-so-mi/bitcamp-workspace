@@ -111,9 +111,10 @@ public class App {
     System.out.println("이름:");
     name4 = KeyInput.nextLine();
     
-    System.out.println("이메일:");
-    email4 = KeyInput.nextLine();
-    
+    System.out.println(for (int i = 0; i <count; i++) {
+         System.out.printf("%d, %s,%s, %s,%s\n",
+         no[pcount], ptitle[pcount] ,pcontent[pcount],pstartDate[pcount],pendDate[pcount]);
+        
     System.out.println("암호:");
     password4 = KeyInput.nextLine();
     
