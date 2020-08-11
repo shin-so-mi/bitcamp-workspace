@@ -3,7 +3,7 @@ package com.eomcs.oop.ex02;
 public class Exam0113 {
 
 static class Score {
-  String name = "";
+  String name;
   int kor;
   int eng;
   int math;

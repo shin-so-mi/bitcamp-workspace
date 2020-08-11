@@ -7,6 +7,9 @@ public class Score {
   public int math;
   public int sum;
   public float aver;
+
+
+
   public void compute() {
   this.sum = this.kor + this.eng + this.math;
   this.aver = this.sum / 3f;

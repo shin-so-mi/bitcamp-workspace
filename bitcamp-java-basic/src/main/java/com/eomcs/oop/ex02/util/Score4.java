@@ -7,13 +7,14 @@ public class Score4 {
   public int math;
   public int sum;
   public float aver;
+
   public void compute() {
   this.sum = this.kor + this.eng + this.math;
   this.aver = this.sum / 3f;
 }
 
 
-  public void init(String name,int kor,int eng,int math) {
+  public Score4(String name,int kor,int eng,int math) {
     this.name = name;
     this.kor = kor;
     this.eng = eng;
@@ -21,6 +22,6 @@ public class Score4 {
 
     this.compute();
 
-
+//생성자는 타입을 없애고 클랴스이름과 같게한다
   }
 }
