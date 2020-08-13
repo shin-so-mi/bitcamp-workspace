@@ -1,32 +1,56 @@
 package com.eomcs.basic.ex08;
 
+import com.eomcs.oop.ex01.Score;
+
+//캠슐화 문법 사용전
 public class Exam0111 {
-public static void main(String[] args) {
-  Examvehicle v = new Examvehicle();
-  Examcar c = new Examcar();
-  Exambike b = new  Exambike();
-  Examsedan s = new Examsedan();
-  Examtruck t = new Examtruck();
-  //레퍼런스는 같은타입의 객체를 가리킬수 잇을 뿐만아니라
-  //그 클래스의 서브 클레스 객체까지 가리킬수 있다
-  //서브클래스는 항상 상위클래스의 모든것을 사용할수 있다
-  //이런 규칙에따라서 다음 v2변수는 Examvehicle객체 뿐만아니라
-  //그밑 바이크 카 세단 객체까지 다양한 서브클래스의 객체를 가리킬수 있다
-  //그래서 v2를 다형적 변수의 기능을 갖고 있다고 말한다
-  Examvehicle v2 = null;
-  v2 = c;
-  v2 = b;
-  v2 = s;
-  v2 = t;
-  //이렇게 상위클래스의 레퍼런스로 하위클래스의 인스턴스를
-  //가리킬수 있는 이유는?
-  //하위클래스의 인스턴스는 상위클래스의 인스턴스 멤버를 갖고잇어서.
-  //그래서상위클래스의 레퍼런스(주소)로 상위클래스의 인스턴스멤버사용을 보장한다
-  //
-  //예를들어 vehcicle 변수v2 가   bike객체를 가르킨다면
-  v2 = b;
-  //v2를 통해서 vehicle변수에 접근할수잇다
+  public static void main(String[] args) {
 
 
+  Score s1 = new Score();
+  s1.name = "홍길동";
+  s1.kor = 100;
+  s1.eng = 90;
+  s1.math = 80;
+  s1.compute();
+
+  s1.sum = s1.kor + s1.eng + s1.math;
+  s1.aver = s1.sum / 4f;
+
+  // 원래 프로그램에서 의도한대로 계산결과가
+  //나오지 않는다
+  //해결책
+  //sum이나 aver처럼 기존필드의 값을연산해서
+  //나온결과를 저장하는경우
+  직접 해당변수의 값을 변경하지 못하도록 막아야한다
+  오직 메서드를 통해서만 변경하도록 해야한다
+
+
+
+
+
+  }
 }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

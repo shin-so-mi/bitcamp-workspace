@@ -3,6 +3,9 @@ package com.eomcs.oop.ex06.c;
 public class C3 extends C {
 
   // 오버라이딩 메서드의 접근 범위를 확대하는 것은 괜찮다.
+  //private  은 오버라이딩 자체가 불가능 하기때문에 접근범위를 확대할수없다
+  //단지 세 메서드를 추가 하는것이다
+
   @Override protected void m2() {} // default 보다 접근 범위를 확대했기 때문에 OK!
   @Override public void m3() {} // protected 보다 접근 범위를 확대!
 
