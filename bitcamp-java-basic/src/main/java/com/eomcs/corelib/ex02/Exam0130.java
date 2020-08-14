@@ -4,7 +4,7 @@ package com.eomcs.corelib.ex02;
 public class Exam0130 {
   public static void main(String[] args) {
 
-    String s1 = new String("Hello");
+    String s1 = new String("Hello"); //해시코드는 둘다 다르다
     String s2 = new String("Hello");
 
     // Object의 hashCode()는 인스턴스 마다 다르다.

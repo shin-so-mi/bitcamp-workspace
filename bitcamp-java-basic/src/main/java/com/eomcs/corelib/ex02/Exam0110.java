@@ -21,5 +21,24 @@ public class Exam0110 {
 
   }
 }
+//String 레퍼런스
+//string 은 자바 기본 타입이아니다
+//클래스이다
+ //string s1;     s1은string 인스턴스 주소를 담는 레퍼런스이다
+
+
+ //String 인스턴스
+//힙에 hello문자코드를 저장할 메모리를 만들고 그 주소를 리턴한다
+//내용물의 동일여부를 검사하지 않고 무조건 인스턴스를 생성
+//가비지가 되면 가비지 컬렉터에 의해 제거
+
+//s1= new String("Hello");
+//String s2= new String("Hello");
+  //System.out.println(s1 ==s2);   false
+
+
+
+
+
 
 

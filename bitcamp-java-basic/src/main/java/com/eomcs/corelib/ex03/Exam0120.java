@@ -10,11 +10,12 @@ public class Exam0120 {
     list.add("bbb"); // aaa, bbb,
     list.add("ccc"); // aaa, bbb, ccc,
     list.add("ddd"); // aaa, bbb, ccc, ddd,
-
+//스트링인슻턴스의 주소목록을 관리
     print(list);
 
     list.remove(2); // aaa, bbb, ddd,
     print(list);
+ //2번방의 주소를 날림
 
     list.remove(0); // bbb, ddd,
     print(list);
@@ -32,7 +33,7 @@ public class Exam0120 {
     list.add(5, "ttt"); // zzz, bbb, yyy, xxx, ddd, ttt
     print(list);
 
-    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd
+    list.set(1, "aaa"); // zzz, aaa, yyy, xxx, ddd, ttt
     print(list);
 
     list.add("ccc"); // zzz, aaa, yyy, xxx, ddd, ttt, ccc
@@ -40,11 +41,11 @@ public class Exam0120 {
 
     list.add("eee"); // zzz, aaa, yyy, xxx, ddd, ttt, ccc, eee
     print(list);
-  }
 
+  }
   static void print(ArrayList list) {
     for (int i = 0; i < list.size(); i++) {
-      System.out.print(list.get(i) + ", ");
+      System.out.print(list.get(i) + ", "); //get꺼내오기
     }
     System.out.println();
   }

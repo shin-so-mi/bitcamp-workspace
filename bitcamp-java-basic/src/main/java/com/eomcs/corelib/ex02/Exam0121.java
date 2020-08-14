@@ -12,6 +12,49 @@ public class Exam0121 {
 
     // 대소문자 구분없이 문자열을 비교하고 싶다면,
     System.out.println(s1.equalsIgnoreCase(s2));
+
+
+
+
+    String a1 = new String("hello");
+    String a2 = new String("Hello");
+
+    System.out.println(a1.equalsIgnoreCase(a2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 }
 
