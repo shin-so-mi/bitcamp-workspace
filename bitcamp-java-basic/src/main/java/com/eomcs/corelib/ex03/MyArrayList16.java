@@ -1,7 +1,4 @@
 package com.eomcs.corelib.ex03;
-
-import java.util.Arrays;
-
 //test1
 //인스턴스/객체(의 주소)를 담을 레퍼런스배열을 준비한다
 //인스턴스를 추가하는 add()메서드 정의
@@ -20,35 +17,26 @@ import java.util.Arrays;
 //Set을 호출할떄 인덱스가 유혀하지 않으면 예외를 발생시킨다
 //test3
 //여러개의 목록을 동시에 관리할수 있도록
-//myarrayList 에 선언된 레퍼런스 배열을 스테틱 대신 인스턴스로 전환한다
+//myarrayList 에 선언된 레퍼런스 배열을 스테틱 대신 인스턴ㅁ스로 전환한댜ㅏ
 //개별적으로관리해야할 데이터는 인스턴스변수를 사용해야한다
 //14 ArrayList 인스턴스를 생성할떄 배열의 초기 크기를 설정할수 있도록 생성자를 추가한다
 //15  ArrayList 인스턴스를 생성할떄 초기크기를 지정하지않고 생성할수 있도록
 //16 배열크기를 지정할떄 기본크기보다 큰 값이 되도록 생성자를 변경한다
-//17 배열의 기본크기를 직접 숫자로 지정하지않고 상수를 사용하여 지정한다
-//18배열의 크기를 늘릴때 자바에서 제공하는 Arrays를  사용하여 처리한다
-//19 배열의 특정항목을 삭제할때 배열복사 기능을 이용하여 처리한다.
-//20 ArrayList 에 보관되어있는 인스턴스 목록을 배열로 리턴하는 toArray()메서드를 추가한다
-//21 toArray() 에서 배열을 복사할떄 Arrays.copyof 메서드를 사용해보자
-//22
-public class MyArrayList {
+public class MyArrayList16 {
 //1,쥬소를담을 배열을 준비한다
-private static final int DEFAULT_CAPACITY =5;
- private Object[] elementData;
+ private Object[] elementData = new Object[5];
  int size;
 
- public MyArrayList() {
-   elementData = new Object[DEFAULT_CAPACITY];
+ public MyArrayList16() {
+   elementData = new Object[5];
  }
- public MyArrayList(int initialCapacity) {
-   if (initialCapacity < DEFAULT_CAPACITY) {
-     elementData = new Object[DEFAULT_CAPACITY];
+ public MyArrayList16(int initialCapacity) {
+   if (initialCapacity < 5) {
+     elementData = new Object[5];
 
    }else {
+   }elementData = new Object[initialCapacity];
 
-
-   elementData = new Object[initialCapacity];
-   }
  }
    public boolean add(Object e) {
     if (size == elementData.length) {
@@ -60,15 +48,12 @@ return true;
 
   }
  private void grow() {
-  //System.out.println("오호라 배열을 늘리자");
-  int newCapacity= elementData.length + (elementData.length >> 1);
- elementData = Arrays.copyOf(elementData, newCapacity);
- /*
+  System.out.println("오호라 배열을 늘리자");
   Object[] newArray = new Object[elementData.length + (elementData.length >> 1)];
   for (int i = 0; i < elementData.length; i++) {
     newArray[i] = elementData[i];
   }
-  elementData = newArray; */
+  elementData = newArray;
 }
 
    public void add(int index,Object element ) {
@@ -110,17 +95,11 @@ return true;
   }
  public Object remove(int index) {
   Object old = elementData[index];
-  System.arraycopy(elementData,// 복사할대상
-      index + 1, // 복사할 항목의 시작 인덱스
-      elementData, // 목적지
-      index, //복사목적지 인덱스
-      this.size - (index + 1)); //복사할 항목의 개수
 
-/*
     for (int i = index; i < size - 1; i++) {
       elementData[i] = elementData[i +1];
 
-    } */
+    }
     size--;
     elementData[size] = null;
     //쓰지않는 주소를 제거하여
@@ -128,21 +107,7 @@ return true;
   return old;
 
 }
-public int size() {
-  return this.size;
-}
 
-public Object[] toArray() {
-   Object[] arr = Arrays.copyOf(elementData, this.size);
-   //System.out.println(elementData == arr); false
-   return arr;
-  /*
-  Object[] arr = new Object[this.size];
-  for (int i = 0; i < arr.length; i++) {
-    arr[i] = elementData[i];
-  }
-  return arr; */
-}
 }
 
 

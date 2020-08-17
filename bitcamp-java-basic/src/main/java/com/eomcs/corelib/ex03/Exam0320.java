@@ -33,10 +33,14 @@ public class Exam0320 {
     print(list);
 
     System.out.println(list.indexOf(s4)); // -1
+    //같은내용을가진 객체가 잇는지찿아보고
+    //같은내용인지는 Equals로 비ㅣ교
     // indexOf()는 equals()를 사용하여 객체가 같은지 비교한다.
     // Member 클래스는 equals()를 오버라이딩 하지 않았다.
     // 따라서 같은 값을 갖더라도 인스턴스가 다르면
     // equals()의 검사 결과도 false가 될 것이다.
+    System.out.println(s2.equals(s4));
+
   }
 
   static void print(ArrayList list) {
