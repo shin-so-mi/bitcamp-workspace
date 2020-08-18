@@ -46,7 +46,6 @@ public class Exam0210 {
     System.out.println("---------------------");
 
   }
-
 }
 
 

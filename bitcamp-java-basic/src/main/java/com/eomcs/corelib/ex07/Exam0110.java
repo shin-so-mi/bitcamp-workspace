@@ -22,7 +22,8 @@ public class Exam0110 {
     String v4 = new String("ddd");
     String v5 = new String("ccc");
 
-    HashSet set = new HashSet();
+    HashSet set = new HashSet(); //메모리를더쓰지만 찿는속도가 빠르다
+
     set.add(v1);
     set.add(v2);
     set.add(v3);

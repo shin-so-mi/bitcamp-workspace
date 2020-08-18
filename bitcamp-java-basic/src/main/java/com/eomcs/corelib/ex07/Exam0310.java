@@ -28,7 +28,7 @@ public class Exam0310 {
     Member v4 = new Member("안중근", 20);
     Member v5 = new Member("유관순", 16);
 
-    HashSet set = new HashSet();
+    HashSet set = new HashSet(); //Data같으면중복저장 안함
     set.add(v1);
     set.add(v2);
     set.add(v3);

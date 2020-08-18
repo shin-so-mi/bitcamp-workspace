@@ -14,11 +14,11 @@ public class Exam0240 {
     String s5 = new String("eee");
 
     ArrayBlockingQueue queue = new ArrayBlockingQueue(100);
-    queue.add(s1);
-    queue.add(s2);
-    queue.add(s3);
-    queue.add(s4);
-    queue.add(s5);
+    queue.ofer(s1);
+    queue.ofer(s2);
+    queue.ofer(s3);
+    queue.ofer(s4);
+    queue.ofer(s5);
 
     Iterator 컬렉션에서값을꺼내주는객체 = queue.iterator();
     while (컬렉션에서값을꺼내주는객체.hasNext()) {

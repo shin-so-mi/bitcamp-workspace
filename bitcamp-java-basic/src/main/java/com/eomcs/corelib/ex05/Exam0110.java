@@ -1,7 +1,7 @@
 // Stack 구현과 사용
 package com.eomcs.corelib.ex05;
 
-import com.eomcs.corelib.ex04.LinkedList;
+
 
 public class Exam0110 {
 
@@ -14,34 +14,35 @@ public class Exam0110 {
 
     Stack stack = new Stack();
     stack.push(s1);
-    print(stack);
     stack.push(s2);
-    print(stack);
     stack.push(s3);
-    print(stack);
+   print(stack);
 
     System.out.println("==>" + stack.pop()); // ccc
-    print(stack);
     System.out.println("==>" + stack.pop()); // bbb
+    print(stack); //aaa
+
+    stack.push(s4);  //aaa,bbb
+    stack.push(s5);  // aaa,bbb,eee
     print(stack);
 
-    stack.push(s4);
-    print(stack);
-    stack.push(s5);
-    print(stack);
+    System.out.println("==============================");
 
     String value;
-    while ((value = (String) stack.pop()) != null) {
-      System.out.println(value);
+    try {
+    while (true) {
+      System.out.println(stack.pop());
     }
+  } catch (Exception e) {
+    System.out.println("스택에서 더이상 꺼낼데이터가없습니다");
   }
-
-  static void print(LinkedList list) {
+  }
+  static void print(Stack list) {
     for (int i = 0; i < list.size(); i++) {
       System.out.print(list.get(i) + ", ");
     }
     System.out.println();
-  }    
+  }
 }
 
 

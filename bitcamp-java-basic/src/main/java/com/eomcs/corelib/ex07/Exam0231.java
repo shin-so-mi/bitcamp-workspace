@@ -4,7 +4,7 @@ package com.eomcs.corelib.ex07;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class Exam0230 {
+public class Exam0231 {
   public static void main(String[] args) {
     String s1 = new String("aaa");
     String s2 = new String("bbb");
@@ -12,7 +12,7 @@ public class Exam0230 {
     String s4 = new String("ddd");
     String s5 = new String("eee");
 
-    Stack stack = new Stack();
+    ArrayDeque stack = new ArrayDeque();
     stack.push(s1);
     stack.push(s2);
     stack.push(s3);

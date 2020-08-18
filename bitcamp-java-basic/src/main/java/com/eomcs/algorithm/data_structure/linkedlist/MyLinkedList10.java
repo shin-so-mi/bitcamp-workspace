@@ -13,7 +13,7 @@ package com.eomcs.algorithm.data_structure.linkedlist;
 // 9) 목록의 데이터를 새배열에 담아 리턴하는 toArray 메서드를정의한다
 // 10) 인스턴스 필드에대해 캡슐화를 적용한다
   //  - 목록크기를 리턴하는 size()를  추가로정의한다
-public class MyLinkedList {
+public class MyLinkedList10 {
 
   // 값을 찾을 때는 첫 번째 노드부터 따라간다.
  private Node first;
@@ -113,7 +113,7 @@ public class MyLinkedList {
       first = old.next;
       old.next = null; //가비지가 다른 인스턴스를 가리키지 않게 한다.
 
-      return old.value;
+      return old;
     }
     Node cursor = this.first;
     for (int i = 1; i <= index - 1; i++) {  //전꺼찿기
