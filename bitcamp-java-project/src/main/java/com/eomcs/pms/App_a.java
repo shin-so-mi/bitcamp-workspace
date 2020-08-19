@@ -6,7 +6,7 @@ import com.eomcs.pms.handler.ProjectHandler;
 import com.eomcs.pms.handler.TaskHandler;
 import com.eomcs.util.Prompt;
 
-public class App {
+public class App_a {
 
   public static void main(String[] args) {
 
@@ -17,12 +17,21 @@ public class App {
     BoardHandler boardHandler5 = new BoardHandler();
     BoardHandler boardHandler6 = new BoardHandler();
 
-
     MemberHandler memberHandler = new MemberHandler();
 
+    ProjectHandler projectHandler = new ProjectHandler();
 
-    ProjectHandler projectHandler = new ProjectHandler(memberHandler);
-    TaskHandler taskHandler = new TaskHandler(memberHandler);
+    // ProjectHandler의 의존 객체 주입을 막는다.
+    //projectHandler.memberHandler = memberHandler;
+
+    TaskHandler taskHandler = new TaskHandler();
+
+    // TaskHandler의 의존 객체 주입을 막는다.
+    //taskHandler.memberHandler = memberHandler;
+
+    // 인스턴스를 사용하는데 필요한 의존 객체 주입을 누락하더라도
+    // 컴파일러는 알 수가 없다.
+    // 실행할 때 비로서 의존 객체가 누락된 문제가 발생할 것이다.
 
     loop:
       while (true) {
