@@ -9,7 +9,7 @@ public class Exam0520 {
     short s2;
     int i2;
     long l2;
-    char c2 = 'a';
+    char c2;
     float f2;
     double d2;
     boolean bool2;
@@ -27,7 +27,7 @@ public class Exam0520 {
     // => 논리(boolean) : false = 0
     // => 레퍼런스: null = 0
     A obj = new A();
-//인스턴스를 생성햇을떄인스턴스 변수사용
+
     System.out.printf("%d, %d, %d, %d, %c, %.1f, %.1f, %b, %s, %s\n", obj.b2, obj.s2, obj.i2,
         obj.l2, obj.c2, obj.f2, obj.d2, obj.bool2, obj.str2, obj.date2);
   }

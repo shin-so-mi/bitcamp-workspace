@@ -22,8 +22,6 @@ public class Exam0160 {
     // r2 = float(3.1) + float(2.0)
     // r2 = float(5.1)
     System.out.println(r2);
-    
-    
   }
 }
 

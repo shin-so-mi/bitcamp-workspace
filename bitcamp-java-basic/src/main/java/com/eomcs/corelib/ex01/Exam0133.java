@@ -38,6 +38,7 @@ public class Exam0133 {
 
     System.out.println(m1 == m2);
     System.out.println(m1 == m3);
+
     System.out.println(m1.equals(m2));
     System.out.println(m1.equals(m3));
   }

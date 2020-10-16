@@ -17,7 +17,7 @@ public class MyLinkedList06 {
   Node last;
 
   // 목록 크기를 보관한다.
-  int size = 0;
+  int size;
 
   // 용도?
   // - Node 클래스는 목록에서 각 항목의 값을 보관하는 객체로 역할을 수행한다.
@@ -32,16 +32,14 @@ public class MyLinkedList06 {
 
     public Node(Object value) {
       this.value = value;
-
-      //node 클래스를 선언한다
     }
   }
 
-  public boolean add(Object e) {  //새로노드를 만드는것
+  public boolean add(Object e) {
     Node node = new Node();
     node.value = e;
 
-    if (first == null) {    // 첫번째 에 node값을 넣고 값이 있는경우에(else) 다음으로넘어간다
+    if (first == null) {
       first = node;
     } else {
       last.next = node;
@@ -85,16 +83,13 @@ public class MyLinkedList06 {
       cursor = cursor.next;
     }
 
-    node.next = cursor.next;  //커서는 바로전 을 가르킨다 next 값은 node를 넣어라
-
+    node.next = cursor.next;
     cursor.next = node;
-
 
     if (node.next == null) {
       last = node;
-
-
     }
+
   }
 }
 

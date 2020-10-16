@@ -5,7 +5,7 @@ package com.eomcs.basic.ex05;
 public class Exam0682 {
   public static void main(String[] args) {
     // 주의!
-    // 1) pre-fix 연산자나 post-fix 연산자를 (수)리터럴에 적용할 수 없다.
+    // 1) pre-fix 연산자나 post-fix 연산자를 리터럴에 적용할 수 없다.
     //int x = ++100; // 컴파일 오류!
     //x = 100++; // 컴파일 오류!
 

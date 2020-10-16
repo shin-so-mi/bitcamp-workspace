@@ -39,7 +39,6 @@ public class Exam0220 {
     // equals()의 검사 결과도 false가 될 것이다.
     // 그래서 contains()로 s4 객체와 같은 객체가 있는지 검사해보면,
     // 같은 객체가 없다고 나온다.
-    //equals를 오버라이딩 해야 결과값이 출력된다
   }
 
   static void print(ArrayList list) {

@@ -31,7 +31,6 @@ public class Exam0111 {
 
     // 존재하지 않는 key를 지정하면 null을 리턴한다.
     System.out.println(map.get(500));
-    //숫자가 인티저 객체임을 기억하자
   }
 
 }

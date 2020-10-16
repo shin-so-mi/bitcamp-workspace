@@ -22,7 +22,7 @@ public class Exam0130 {
   // 그래서 Exam0120에 있던 코드 중에서 공백을 계산하는 코드를
   // 별도의 블록으로 분리하여 이름을 부여한다.
   public static int getSpaceLength(int totalStar, int displayStar) {
-    return (totalStar - displayStar) >> 1;
+    return (totalStar - displayStar) / 2;
   }
 
   public static void main(String[] args) {

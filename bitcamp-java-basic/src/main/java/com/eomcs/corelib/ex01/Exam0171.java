@@ -54,7 +54,6 @@ public class Exam0171 {
 
   public static void main(String[] args) throws Exception {
 
-
     Score s1 = new Score("홍길동", 100, 100, 100);
     Score s2 = s1.clone(); // 실행 오류! (run-time error)
 

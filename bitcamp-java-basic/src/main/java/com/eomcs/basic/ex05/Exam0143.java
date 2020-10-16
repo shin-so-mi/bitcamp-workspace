@@ -5,12 +5,12 @@ package com.eomcs.basic.ex05;
 public class Exam0143 {
   public static void main(String[] args) {
     
-    float f1 = 987.6543f;                          double d1 = 987.6543;
-    float f2 = 1.111111f;                          double d2 = 1.111111;
-    System.out.println(f1);                        double d3 = d1 + d2;
-    System.out.println(f2);                         System.out.println(d3);
+    float f1 = 987.6543f;
+    float f2 = 1.111111f;
+    System.out.println(f1);
+    System.out.println(f2);
+    
     float r1 = f1 + f2;
- 
     // f1과 f2에 들어 있는 값이 유효자릿수라 하더라도
     // 연산 결과가 유효자릿수가 아니라면 값을 깨진다.
     // => float과 float의 연산 결과는 float이기 때문이다.
@@ -38,11 +38,11 @@ public class Exam0143 {
     // => float을 double 변수에 넣을 때 왜곡이 발생하기 때문에 
     //    가능한 double 변수로 값을 바꾼 다음에 연산을 수행하라.
     //    더 좋은 것은 처음부터 double 변수를 사용하라!
-    
+
     // 다음과 같이 처음부터 double 변수를 사용하라!
-    double d6 = 987.6543;
-    double d7 = 1.111111;
-    double r5 = d6 + d7; // = 988.765411
+    double d1 = 987.6543;
+    double d2 = 1.111111;
+    double r5 = d1 + d2; // = 988.765411
     System.out.println(r5);
     // 그럼에도 실제 출력해보면 맨 뒤에 극한의 작은 수가 붙는다.
     // 이유? IEEE 754 이진수 변환 문제이다. 고민하지 말라!

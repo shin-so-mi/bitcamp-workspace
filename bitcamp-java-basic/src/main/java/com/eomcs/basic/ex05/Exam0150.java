@@ -50,22 +50,22 @@ public class Exam0150 {
     //float r9 = f + d; // 컴파일 오류!
 
     // byte + short + int + long + float + double = double
-      //long r10 = b + s + i + l + f + d; // 컴파일 오류!
+    //long r10 = b + s + i + l + f + d; // 컴파일 오류!
 
     // float + int + long = float
     //long r11 = f + i + l; // 컴파일 오류!
 
     // boolean + int = 컴파일 오류!
     // => 산술 연산자는 정수 타입(byte, short, char, int, long)과
-    //    부동소수점 타입(float, double)에 대해서만 
-    //    실행할 수 있다. 
+    //    부동소수점 타입(float, double)에 대해서만
+    //    실행할 수 있다.
     //int r12 = bool + i; // 컴파일 오류!
   }
 }
 
 // 정리!
 // - 연산은 항상 같은 타입끼리만 가능하다.
-// - 다른 타입끼리 연산을 할 때는 둘 중 한개의 타입을 다른 타입을 
+// - 다른 타입끼리 연산을 할 때는 둘 중 한개의 타입을 다른 타입을
 //   바꿔야 한다.
 // - 타입을 바꾸는 것을 내부적인 규칙에 따라 자동으로 처리한다고 해서
 //   "암시적 형변환(implicit type conversion)"이라 부른다.
@@ -75,10 +75,3 @@ public class Exam0150 {
 //
 // - 정수와 부동소수점에 대해서만 암시적 형변환이 일어난다.
 //   그 외 다른 타입은 불가능하다!
-
-
-
-
-
-
-

@@ -17,57 +17,7 @@ public class Exam0114 {
 
     System.out.println(s1 == s2);
     System.out.println(s2 == s3);
-
-
-
-String s5 = new String("hello");
-String s6 = "hello";  //먼저 상수풀에 String객체를 생성해보자
-String s7 = s5.intern(); //s5를 상수풀로만들어 S7에 넣는다
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-String a1 = new String("Hello");
-
-//>>>>>>>>>>>>>>.>>>>>>>>>>>>
-
-String a2 = "Hello";
-String t5 = a1.intern();
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
 }
-}
+
+

@@ -3,7 +3,7 @@ package com.eomcs.corelib.ex01;
 
 public class Exam0173 {
 
-  static class Engine implements Cloneable {
+  static class Engine {
     int cc;
     int valve;
 
@@ -16,7 +16,6 @@ public class Exam0173 {
     public String toString() {
       return "Engine [cc=" + cc + ", valve=" + valve + "]";
     }
-
   }
 
   static class Car implements Cloneable {

@@ -13,7 +13,6 @@ public class Exam0120 {
     // 두 인스턴스가 갖고 있는 문자열이 같은지를 비교하고 싶다면,
     System.out.println(s1.equals(s2));
 
-
     // equals()?
     // - Object에 정의되어 있는 메서드이다.
     // - 인스턴스가 같은지 비교한다.
@@ -24,12 +23,5 @@ public class Exam0120 {
     //
   }
 }
-equals란
-Object에 정의되어있는 메서드이다
-인스턴스가 같은지 비교한다
 
-string equals 란
-
-Object 에서 상속 받은 것을 오버라이딩 하였다
-문자열이 같은지 비교한다
 

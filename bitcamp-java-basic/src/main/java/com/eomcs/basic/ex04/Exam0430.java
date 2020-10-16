@@ -1,64 +1,54 @@
 package com.eomcs.basic.ex04;
 
 public class Exam0430 {
-public static void main(String[] args) {
+  public static void main(String[] args) {
+
+    char c;
+
+    c = 0;
+    c = 65535;
+    //c = -1;
+    //c = 65536;
+
+    c = 65;
+    c = 0x42;
+    c = 0b01000011;
+    System.out.println(c);
+
+    short s = 65;
+    System.out.println(s);
+
+    c = '헐'; // '' 연산자는 문자의 유니코드 값을 리턴한다.
+    System.out.println(c);
+
+    int i = '헐';
+    i = c;
+    System.out.println(i);
+
+    // 문자 코드는 정수 값이다.
+    for (int x = 65; x < 80; x++) {
+      System.out.println((char)x);
+    }
+
+    boolean b1, b2;
+    b1 = true;
+    b2 = false;
+
+    System.out.println(b1);
+    System.out.println(b2);
+
+    // 논리 값은 정수로 다룰 수 없다.
+    //i = b1;
+    //i = b2;
+    //b1 = 1;
+
+    byte b; // 1바이트 정수 값을 담을 메모리를 확보하고
+    // 그 메모리의 이름을 b라고 하라.
+    b = 12; // b라는 이름의 메모리에 12를 저장하라.
+    b = 38; // b라는 이름의 메모리에 38일 저장하라.
+
+    System.out.println(b); // b메모리에 저장된 값을 출력하라.
 
 
-  
-  char c1;
-  char c2;
-  char c3;
-  
-  // 문자 'A'를 변수에 저장하는 방법?
-  //- 문자 'A'의 UCS-2 코드 값을 저장하면 된다.
-  //
-  c2 = 65;            // 문자 'A'의 코드 값을 10진수로 표현한 것.
-  c1 = 0x41;          // 문자 'A'의 코드 값을 16진수로 표현한 것.
-  c3 = 0b0100_0001;   // 문자 'A'의 코드 값을 2진수로 표현한 것.
-
-  // println()을 통해 문자를 출력할 수 있다.
-  //- 변수의 종류가 char 이면 출력할 때 코드 값 대신 문자를 출력한다.
-  //- 해당 코드의 문자를 폰트 파일에서 찾아 출력한다.
-  //
-  System.out.println(c1);
-  System.out.println(c2);
-  System.out.println(c3);
-
-
-  
-  
-  char c = 'A';
-  char b = 'B';
-  
-  System.out.println(c);
-  System.out.println(b);
-  
-  
-  
-  
-  
-  
-  
-  
-char d = 't';
-char w = 'i';
- 
-System.out.println(d);
-  System.out.println(w);
-  
-  int a = 0x41;
-  System.out.println(a);
-  System.out.println((char)a);
-  
   }
-  
-  
-  
 }
-}
-
- 
-    
-  
-  
-  

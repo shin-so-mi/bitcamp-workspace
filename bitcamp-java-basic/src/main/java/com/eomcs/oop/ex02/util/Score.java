@@ -8,10 +8,8 @@ public class Score {
   public int sum;
   public float aver;
 
-
-
   public void compute() {
-  this.sum = this.kor + this.eng + this.math;
-  this.aver = this.sum / 3f;
-}
+    this.sum = this.kor + this.eng + this.math;
+    this.aver = this.sum / 3f;
+  }
 }

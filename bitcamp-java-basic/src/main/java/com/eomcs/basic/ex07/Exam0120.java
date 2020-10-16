@@ -6,7 +6,7 @@ import java.util.Scanner;
 //
 public class Exam0120 {
 
-  // 스페이스를 출력하는 코드들을
+  // 스페이스를 출력하는 코드들을 
   // 관리하기 쉽도록 별도의 블록에 모아 놓는다.
   // 그리고 그 블록에 대해 이름을 붙인다.
   // => 이렇게 정의한 블록을 "메서드(method)" 또는
@@ -35,9 +35,9 @@ public class Exam0120 {
 
     for (int starLen = 1; starLen <= len; starLen += 2) {
       // 명령 코드들을 기능 별로 묶어 놓고
-      // 필요할 때마다 다음과 같이 사용하면
+      // 필요할 때마다 다음과 같이 사용하면 
       // 코드를 읽기가 쉬워진다.
-      printSpaces((len - starLen) / 2);  //
+      printSpaces((len - starLen) / 2);
       printStars(starLen);
       System.out.println();
     }

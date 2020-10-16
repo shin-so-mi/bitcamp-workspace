@@ -49,7 +49,6 @@ public class Customer3 {
     if (weight < 1 || weight > 200) {
       this.weight = 0;
       return;
-
     }
     this.weight = weight;
   }

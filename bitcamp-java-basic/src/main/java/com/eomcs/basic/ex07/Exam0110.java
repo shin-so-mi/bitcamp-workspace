@@ -8,14 +8,14 @@ public class Exam0110 {
   public static void main(String[] args) {
     Scanner keyScan = new Scanner(System.in);
     System.out.print("밑변의 길이? ");
-    int len = keyScan.nextInt();  //공백
+    int len = keyScan.nextInt();
 
     int starLen = 1;
     while (starLen <= len) {
       int spaceCnt = 1;
       int spaceLen = (len - starLen) / 2;
       while (spaceCnt <= spaceLen) {
-        System.out.print(" ");   //별
+        System.out.print(" ");
         spaceCnt++;
       }
 
@@ -26,7 +26,7 @@ public class Exam0110 {
       }
       System.out.println();
       starLen += 2;
-
+      
       keyScan.close();
     }
   }

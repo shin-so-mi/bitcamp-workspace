@@ -2,7 +2,6 @@
 package com.eomcs.corelib.ex07;
 
 import java.util.Iterator;
-import java.util.Stack;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class Exam0240 {
@@ -14,11 +13,11 @@ public class Exam0240 {
     String s5 = new String("eee");
 
     ArrayBlockingQueue queue = new ArrayBlockingQueue(100);
-    queue.ofer(s1);
-    queue.ofer(s2);
-    queue.ofer(s3);
-    queue.ofer(s4);
-    queue.ofer(s5);
+    queue.offer(s1);
+    queue.offer(s2);
+    queue.offer(s3);
+    queue.offer(s4);
+    queue.offer(s5);
 
     Iterator 컬렉션에서값을꺼내주는객체 = queue.iterator();
     while (컬렉션에서값을꺼내주는객체.hasNext()) {

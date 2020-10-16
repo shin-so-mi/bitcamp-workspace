@@ -55,7 +55,8 @@ public class Exam0142 {
         return false;
       return true;
     }
-  //같이 오버라이딩 해줘야 좋음
+
+
   }
 
 }

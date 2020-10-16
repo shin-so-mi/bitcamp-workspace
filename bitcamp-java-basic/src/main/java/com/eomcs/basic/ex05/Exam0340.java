@@ -1,7 +1,7 @@
 package com.eomcs.basic.ex05;
 
 //# 논리 연산자 : || vs |
-//  or둘중하나가 true면 true다
+//
 public class Exam0340 {
   public static void main(String[] args) {
     boolean a = true;

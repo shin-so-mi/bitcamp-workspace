@@ -6,7 +6,7 @@ public class Exam0231 {
 
     Integer obj1 = Integer.valueOf(100);
     Integer obj2 = 100;
-    System.out.println(obj1 == obj2);
+    System.out.println(obj1 == obj2); //true
     // auto-boxing이나 valueOf()로 생성한 wrapper 객체는
     // constants pool에 오직 한 개만 생성되기 때문에
     // 값을 비교할 때 그냥 == 연산자를 사용하여 인스턴스 주소로 비교해도 된다.
@@ -17,7 +17,7 @@ public class Exam0231 {
     Integer obj4 = new Integer(100); // Heap에 인스턴스 생성
 
     // 다음과 같이 == 연산자를 사용하여 비교하면 안된다.
-    System.out.println(obj3 == obj4);
+    System.out.println(obj3 == obj4); // false
 
     // String 클래스의 경우처럼
     // Integer 클래스가 오버라이딩한 equals()를 호출해야 한다.

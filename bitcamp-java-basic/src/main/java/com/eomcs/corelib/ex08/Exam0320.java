@@ -30,7 +30,6 @@ public class Exam0320 {
     // 즉 keySet()을 호출할 때 모든 key를 미리 목록을 만들어 리턴하지 않는다.
     for (Object key : keys) {
       System.out.println(key);
-      //remove한것은 빠지고 나머지가 츌력된다
     }
   }
 

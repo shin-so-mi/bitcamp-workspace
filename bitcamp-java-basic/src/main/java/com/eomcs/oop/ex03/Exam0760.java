@@ -1,4 +1,3 @@
-
 // 인스턴스 초기화 블록(instance initializer) - 인스턴스 블록의 활용
 package com.eomcs.oop.ex03;
 

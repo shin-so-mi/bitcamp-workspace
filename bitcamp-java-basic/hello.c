@@ -1,35 +1,32 @@
-      #include <stdio.h>
-      #include <stdlib.h>
-      
-      
+#include <stdio.h>
+#include <stdlib.h>
 
- // function prototype
- void f1(int);
- void f2(int*);
-     
- 
- 
- int main() {
+int plusi(int, int); // function prototype = method signature
+float plusf(float, float);
+
+int main() {
+
+  int result = plusi(100, 200);
   
- 
- 
- int a = 200;
- f1(a);
- 
- printf("a = %d\n" ,a); 
- 
- f2(&a);
- printf("a = %d\n" ,a); 
-return 0;
+  printf("%d\n", result);
+  
+  float result2 = plusf(3.14f, 2.3f);
+  printf("%f\n", result2);
+  
+  return 0;
 }
 
-void f1(int a) {
-a = 100;
-
+int plusi(int a, int b) {
+  return a + b;
 }
 
-void f2(int* p) {
-*p = 100;
-
-
+float plusf(float a, float b) {
+  return a + b;
 }
+
+
+
+
+
+
+

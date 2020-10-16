@@ -1,56 +1,59 @@
+// 특별한 인스턴스 메서드 - 생성자(constructor)
 package com.eomcs.oop.ex03;
 
 public class Exam0410 {
-  static class Smartphone {
-    int volume;
-    int bright;
-    int constrast;
 
+  // Exam0410 클래스 조차도 기본 생성자가 자동으로 추가된다.
+  // 즉 다음의 생성자를 컴파일러가 자동으로 붙일 것이다.
+  //public Exam0410() {}
 
-    void playmusic() {
-      // 음악을 출력한다
-    }
-    //생성자란?
-    // 인스턴스를 만든 후 사용하기전에 적적한 값으로 초기화시킬 필요가있다
-   // (제품을만든 후 사용하기전에)
-    //제품이 구동되는데 문제가없도록 기본값으로 설정되어야한다
-    //그래서 인스턴스를 사용하기 전에 적절한 값으로 초기화 시키기위해
-    //자동으로 호출하는 메서드를 도입하게 되었다(생성자)
-    //모든클래스는 반드시 한개이상의 생성자를 가져야 한다
-    //생성자문법
-    //클래스명 (파라미터,..) {
- //생성자를 선언할때는 리턴타입을 지정하지 않는다
-  //개발자가 생성자를 작성하지 않으면 컴파일러가 자동으로 추가한다
- // 기본생성자 (default constructor)
-    //파라미터가 없는 생성자
-    //public으로 공개된다
-    //public 클래스명() {
+  static class Score {
+    String name;
+    int kor;
+    int eng;
+    int math;
+    int sum;
+    float average;
 
-    //이클래스의 생성자를 정의하지않으면ㅇ 다음과같이 기본생성자가 추가된다
-    //   public Smartphone(){
-
-
+    // 생성자
+    // => 클래스 이름과 같은 이름으로 메서드를 만든다.
+    // => 리턴 타입을 선언하지 않는다. 즉 값을 리턴하지 않는다.
+    // => 인스턴스를 만들 때 자동 호출된다. 
+    //    일반 메서드처럼 나중에 따로 호출할 수 없다.
+    // => 만약 개발자가 생성자를 만들지 않으면 컴파일러가 기본 생성자를 자동으로 생성해준다.
+    //    모든 클래스는 반드시 한 개 이상의 생성자가 있다.
+    // => 보통 인스턴스를 만든 후에 인스턴스 변수를 초기화시키는 용도로 정의한다.
+    // => 생성된 인스턴스가 제대로 쓰일 수 있도록 유효한 값으로 초기화시키는 일을 한다.
+    // => 다음과 파라미터가 없는 생성자가 기본 생성자이다.(default constructor)
+    Score() {
+      System.out.println("Score()");
     }
 
-public static void main(String[] args) {
-  //인스턴스를 생성할떄 반드시 ㄹ호출될 생성자를 지정해야한ㄱ다
-  //new 클래스명(값);
-  //new A();생성자에 파라미터가 없기때문에 값을 넘겨주지않는다
-  //new A(100); 생성자의 파라미터가 int이기땜에 정수 값을 넘긴다
 
+    public void compute() {
+      this.sum = this.kor + this.eng + this.math;
+      this.average = this.sum / 3f;
+    }
+  }
 
-  //smartphone 인스턴스를 만들때 기본생성자가 호출되게 한다
-//  Smartphone obj1 = new Smartphone;// 오류
+  public static void main(String[] args) {
+    // 생성자를 호출하는 방법
+    // => 인스턴스를 생성하는 new 명령에서 호출할 생성자의 파라미터 값을 지정하면 된다.
+    // => 다음과 같이 파라미터 값을 주지 않으면 기본 생성자를 호출하라는 뜻이 된다.
+    Score s1 = new Score(); // 드디어 클래스 명 다음에 오는 괄호()의 의미를 알게 되었다.
 
-  //다음과같이 존재하지않는 생성자를 지정하면 오류이다
-  //Smartphone obj1 = new Smartphone(100); int 파라미터를가지는 생성자는없다
+    // 생성자를 호출하지 않을 수 있는가?
+    // => 컴파일 오류!
+    //Score s2 = new Score;
 
-
-
-Smartphone obj1 = new Smartphone();
-obj1.playmusic();
-System.out.println(obj1.volume);
-System.out.println(obj1.bright);
-System.out.println(obj1.constrast);
+    Score s3 = new Score();
+  }
 }
-}
+
+
+
+
+
+
+
+

@@ -26,8 +26,6 @@ public class Exam0151 {
       return result;
     }
 
-
-
     @Override
     public boolean equals(Object obj) {
       if (this == obj)
@@ -71,7 +69,7 @@ public class Exam0151 {
     set.add(s2);
     set.add(s3);
     set.add(s4);
-    // 같은값은저장하지안흔다
+
     // 해시셋에 보관된 객체를 꺼낸다.
     Object[] list = set.toArray();
     for (Object obj : list) {

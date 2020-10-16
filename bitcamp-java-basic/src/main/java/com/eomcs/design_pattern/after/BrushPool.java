@@ -1,0 +1,27 @@
+package com.eomcs.design_pattern.after;
+
+import java.util.HashMap;
+import java.util.Map;
+
+//생성한 객체를 보관해 두었다가
+//필요할 떄마다 꺼내주는 일을 한다
+//이렇게생성된 객체를 재사용 할 수 있도록
+//보관해두었다가 꺼내주는 방식의 설계기법을 디자인 패턴이라한다
+//메모리를 효율적으로 사용
+public class BrushPool {
+Map<String,Brush> brushMap = new HashMap<>();
+
+
+//브러쉬를 리턴하는 메서드
+public Brush getBrush(String pattern) {
+  Brush brush = brushMap.get(pattern);
+
+  if (brush == null) {
+    System.out.printf("%s 브러시생성\n", pattern);
+    brush = new Brush(pattern);
+    brushMap.put(pattern,brush);
+
+  }
+  return brush;
+}
+}

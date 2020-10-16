@@ -71,7 +71,7 @@ class Score4 {
     return this.aver;
   }
 
- private void compute() {
+  private void compute() {
     this.sum = this.kor + this.eng + this.math;
     this.aver = this.sum / 3f;
   }

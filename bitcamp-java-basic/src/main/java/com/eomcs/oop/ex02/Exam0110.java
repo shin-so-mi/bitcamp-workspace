@@ -1,9 +1,5 @@
 package com.eomcs.oop.ex02;
 
-
-
-
-
 public class Exam0110 {
 
   public static void main(String[] args) {
@@ -22,17 +18,4 @@ public class Exam0110 {
     System.out.printf("%s: %d, %d, %d, %d, %.1f\n", name, kor, eng, math, sum, aver);
 
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 }

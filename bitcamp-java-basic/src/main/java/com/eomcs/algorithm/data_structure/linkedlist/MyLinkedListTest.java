@@ -24,30 +24,35 @@ public class MyLinkedListTest {
     list.add(2, "eee"); // aaa, bbb, eee, ccc, ddd,
     list.add(0, "fff"); // fff, aaa, bbb, eee, ccc, ddd,
     list.add(6, "ggg"); // fff, aaa, bbb, eee, ccc, ddd, ggg
-    list.add("hhh");    // fff, aaa, bbb, eee, ccc, ddd, ggg , hhh
-
+    list.add("hhh"); // fff, aaa, bbb, eee, ccc, ddd, ggg, hhh
     print(list);
 
     System.out.println("---------------------");
 
+    System.out.println(list.remove(4)); // fff, aaa, bbb, eee, ddd, ggg, hhh
+    print(list);
 
-    System.out.println(list.remove(4));   // fff, aaa, bbb, eee, ddd, ggg , hhh
-   print(list);
+    System.out.println(list.remove(0)); // aaa, bbb, eee, ddd, ggg, hhh
+    print(list);
 
-    System.out.println(list.remove(0));   // aaa, bbb, eee,  ddd, ggg , hhh
-  print(list);
+    System.out.println(list.remove(5)); // aaa, bbb, eee, ddd, ggg
+    print(list);
 
-  System.out.println(list.remove(5));   // aaa, bbb, eee, ddd, ggg
-  print(list);
-System.out.println("=======================");
- System.out.println(list.set(1,"xxx"));   // aaa, xxx, eee, ddd, ggg
-  print(list);
+    System.out.println("---------------------");
 
-  System.out.println(list.set(0,"yyy"));   // aaa, xxx, eee, ddd, ggg
-  print(list);
+    System.out.println(list.set(1, "xxx")); // aaa, xxx, eee, ddd, ggg
+    print(list);
 
-  System.out.println(list.set(4,"zzz"));   // aaa, xxx, eee, ddd, ggg
-  print2(list.toArray());
+    System.out.println(list.set(0, "yyy")); // aaa, xxx, eee, ddd, ggg
+    print(list);
+
+    System.out.println(list.set(4, "zzz")); // aaa, xxx, eee, ddd, ggg
+    print(list);
+
+    System.out.println("---------------------");
+
+    print2(list.toArray());
+
   }
 
   static void print(MyLinkedList list) {
@@ -56,7 +61,6 @@ System.out.println("=======================");
     }
     System.out.println();
   }
-
 
   static void print2(Object[] arr) {
     for (Object obj : arr) {

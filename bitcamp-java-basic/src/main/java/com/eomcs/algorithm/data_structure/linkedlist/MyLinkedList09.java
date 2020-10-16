@@ -8,10 +8,9 @@ package com.eomcs.algorithm.data_structure.linkedlist;
 // 5) 목록에서 값을 조회하는 get() 메서드를 정의한다.
 // 6) 목록에서 특정 인덱스 위치에 값을 삽입하는 add(int, Object) 메서드를 정의한다.
 //    - Node의 생성자를 추가한다.
-// 7) 목록에서 특정 인덱스의 값을 제거하는 remove메서드를 정의한다
-// 8) 목록에서 특정 인덱스의 값을 바꾸는 set(int,Object) 메서드를 정의한다.
-// 9) 목록의 데이터를 새배열에 담아 리턴하는 toArray 메서드를정의한다
-
+// 7) 목록에서 특정 인덱스에 값을 제거하는 remove(int) 메서드를 정의한다.
+// 8) 목록에서 특정 인덱스의 값을 바꾸는 set(int, Object) 메서드를 정의한다.
+// 9) 목록의 데이터를 새 배열에 담아 리턴하는 toArray() 메서드를 정의한다.
 public class MyLinkedList09 {
 
   // 값을 찾을 때는 첫 번째 노드부터 따라간다.
@@ -21,7 +20,7 @@ public class MyLinkedList09 {
   Node last;
 
   // 목록 크기를 보관한다.
-  int size = 0;
+  int size;
 
   // 용도?
   // - Node 클래스는 목록에서 각 항목의 값을 보관하는 객체로 역할을 수행한다.
@@ -36,16 +35,14 @@ public class MyLinkedList09 {
 
     public Node(Object value) {
       this.value = value;
-
-      //node 클래스를 선언한다
     }
   }
 
-  public boolean add(Object e) {  //새로노드를 만드는것
+  public boolean add(Object e) {
     Node node = new Node();
     node.value = e;
 
-    if (first == null) {    // 첫번째 에 node값을 넣고 값이 있는경우에(else) 다음으로넘어간다
+    if (first == null) {
       first = node;
     } else {
       last.next = node;
@@ -89,19 +86,16 @@ public class MyLinkedList09 {
       cursor = cursor.next;
     }
 
-    node.next = cursor.next;  //커서는 바로전 을 가르킨다 next 값은 node를 넣어라
-
+    node.next = cursor.next;
     cursor.next = node;
-
 
     if (node.next == null) {
       last = node;
-
-
     }
   }
+
   public Object remove(int index) {
-    if (index < 0 || index > this.size) {
+    if (index < 0 || index >= this.size) {
       throw new IndexOutOfBoundsException("인덱스가 유효하지 않습니다.");
     }
 
@@ -110,27 +104,26 @@ public class MyLinkedList09 {
     if (index == 0) {
       Node old = first;
       first = old.next;
-      old.next = null; //가비지가 다른 인스턴스를 가리키지 않게 한다.
-
-      return old;
+      old.next = null; // 가비지가 다른 인스턴스를 가리키지 않게 한다.
+      return old.value;
     }
+
     Node cursor = this.first;
-    for (int i = 1; i <= index - 1; i++) {  //전꺼찿기
+    for (int i = 1; i <= index - 1; i++) {
       cursor = cursor.next;
     }
-    Node old = cursor.next; //현재커서의 Next 가
 
-    cursor.next = old.next; //현재커서가다음을 찿고 또다음으로감
-    old.next = null;
+    Node old = cursor.next;
+    cursor.next = old.next;
+    old.next = null; // 가비지가 다른 인스턴스를 가리키지 않게 한다.
 
-
-   if (cursor.next == null) {
-     last = cursor;
-   }
+    if (cursor.next == null) {
+      last = cursor;
+    }
 
     return old.value;
+  }
 
-}
   public Object set(int index, Object element) {
     if (index < 0 || index >= this.size) {
       throw new IndexOutOfBoundsException("인덱스가 유효하지 않습니다.");
@@ -140,26 +133,29 @@ public class MyLinkedList09 {
     for (int i = 1; i <= index; i++) {
       cursor = cursor.next;
     }
+
     Object old = cursor.value;
     cursor.value = element;
-    return  old;
+
+    return old;
   }
 
   public Object[] toArray() {
     Object[] arr = new Object[this.size];
 
-    int i =0;
+    int i = 0;
     Node cursor = first;
 
-     while (cursor != null) {
-       arr[i++] = cursor.value;
-       cursor = cursor.next;
+    while (cursor != null) {
+      arr[i++] = cursor.value;
+      cursor = cursor.next;
+    }
 
-     }
-     return arr;
-
+    return arr;
   }
 }
+
+
 
 
 

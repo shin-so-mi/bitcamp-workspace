@@ -16,8 +16,7 @@ public class Exam0160 {
     System.out.println(classInfo.getName());
     System.out.println(classInfo.getSimpleName());
   }
-} //리플랙션 api(applcation   programing inteface)
-
+}
 
 
 

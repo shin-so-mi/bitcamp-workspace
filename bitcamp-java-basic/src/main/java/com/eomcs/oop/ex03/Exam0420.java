@@ -1,57 +1,66 @@
+// 생성자 - 파라미터를 받는 생성자 
 package com.eomcs.oop.ex03;
 
 public class Exam0420 {
-  static class Smartphone {
-    int volume;
-    int bright;
-    int constrast;
-//다음과 같이 기본생성자를 직접정의할수있다
-    public Smartphone() {
-      System.out.println("Smartphone() 생성자 호출됨");
+
+  static class Score {
+    String name;
+    int kor;
+    int eng;
+    int math;
+    int sum;
+    float average;
+
+    // 생성자가 한 개라도 있으면 컴파일러는 기본 생성자를 만들어주지 않는다.
+    Score(String name, int kor, int eng, int math) {
+      System.out.println("Score(String,int,int,int) 호출!");
+
+      // 파라미터로 받은 값을 새로 만든 인스턴스 변수에 저장한다.
+      // => 이렇게 생성자는 새로 만든 인스턴스 변수를 초기화시키는 일을 한다.
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.compute();
     }
 
 
-    //생성자란?
-    // 인스턴스를 만든 후 사용하기전에 적적한 값으로 초기화시킬 필요가있다
-   // (제품을만든 후 사용하기전에)
-    //제품이 구동되는데 문제가없도록 기본값으로 설정되어야한다
-    //그래서 인스턴스를 사용하기 전에 적절한 값으로 초기화 시키기위해
-    //자동으로 호출하는 메서드를 도입하게 되었다(생성자)
-    //모든클래스는 반드시 한개이상의 생성자를 가져야 한다
-    //생성자문법
-    //클래스명 (파라미터,..) {
- //생성자를 선언할때는 리턴타입을 지정하지 않는다
-  //개발자가 생성자를 작성하지 않으면 컴파일러가 자동으로 추가한다
- // 기본생성자 (default constructor)
-    //파라미터가 없는 생성자
-    //public으로 공개된다
-    //public 클래스명() {
-
-    //이클래스의 생성자를 정의하지않으면ㅇ 다음과같이 기본생성자가 추가된다
-    //   public Smartphone(){
-
-
+    public void compute() {
+      this.sum = this.kor + this.eng + this.math;
+      this.average = this.sum / 3f;
     }
+  }
 
-public static void main(String[] args) {
-  //인스턴스를 생성할떄 반드시 ㄹ호출될 생성자를 지정해야한ㄱ다
-  //new 클래스명(값);
-  //new A();생성자에 파라미터가 없기때문에 값을 넘겨주지않는다
-  //new A(100); 생성자의 파라미터가 int이기땜에 정수 값을 넘긴다
+  public static void main(String[] args) {
+    // Score 클래스에는 기본 생성자가 없기 때문에
+    // 다음 문장은 컴파일 오류이다!
+    //Score s0 = new Score();
 
+    // Score 인스턴스를 만든 후에는 
+    // 생성자를 호출할 때 그 생성자의 파라미터 값을 주어야 한다.
+    Score s1 = new Score("홍길동", 100, 90, 77);
+    Score s2 = new Score("임꺽정", 80, 88, 87);
 
-  //smartphone 인스턴스를 만들때 기본생성자가 호출되게 한다
-//  Smartphone obj1 = new Smartphone;// 오류
+    // 생성자에서 이미 계산을 수행했기 때문에 
+    // 합계와 평균을 계산하기 위해 따로 compute()를 호출할 필요가 없다.
+    // 이것이 생성자를 사용하는 이유이다.
+    // 생성자를 사용하면 좀 더 코드가 간결해진다.
+    System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
+        s1.name, s1.kor, s1.eng, s1.math, s1.sum, s1.average);
 
-  //다음과같이 존재하지않는 생성자를 지정하면 오류이다
-  //Smartphone obj1 = new Smartphone(100); int 파라미터를가지는 생성자는없다
-
-
-
-Smartphone obj1 = new Smartphone();
-obj1.playmusic();
-System.out.println(obj1.volume);
-System.out.println(obj1.bright);
-System.out.println(obj1.constrast);
+    System.out.printf("%s, %d, %d, %d, %d, %.1f\n",
+        s2.name, s2.kor, s2.eng, s2.math, s2.sum, s2.average);
+  }
 }
-}
+
+// 생성자?
+// => 인스턴스(객체)를 생성한 후에 사용하기 전에(제대로 쓰일 수 있도록) 
+//    유효한(적당한) 값으로 초기화시키는 작업을 수행한다.
+// 
+
+
+
+
+
+
+

@@ -18,10 +18,7 @@ public class B extends A {
     System.out.println("B클래스의 static{} 실행!");
   }
 }
-//A로 찿아가서 static블록 먼저 출력하고
-//B클래스로 와서 static블록을 실행
-// A클래스의 인스턴스변수 int v1을 힙에 저장
-//b클래ㅔ스의 인스턴스변수 int v2를 힙에 저장
+
 
 
 

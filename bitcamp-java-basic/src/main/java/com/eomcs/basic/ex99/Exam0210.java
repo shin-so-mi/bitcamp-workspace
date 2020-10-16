@@ -13,7 +13,7 @@ public class Exam0210 {
     //    바꿔주는 기능을 제공한다.
     //    그런 기능이 들어 있는 도구가 java.util.Scanner 이다.
     // => 키보드를 스캐너에 연결한다.
-    java.util.Scanner keyScan = new java.util.Scanner(keyboard);//
+    java.util.Scanner keyScan = new java.util.Scanner(keyboard);
 
     // print()는 문자열을 출력한 후 줄 바꿈을 하지 않는다.
     System.out.print("팀명? ");
@@ -27,11 +27,7 @@ public class Exam0210 {
     //   사용자가 엔터키를 누르면,
     //   입력값으로 0d0a 2바이트 값이 들어오고,
     //   nextLine()은 그 전까지 들어온 데이터를 문자열로 만들어 리턴한다.
-    String str = keyScan.nextLine(); //레퍼런스 필요
-    System.currentTimeMillis();      //데이터 불필요
-    // 메소드앞에static 이붙으면 기본입력이 필요 없다
-    //기본데이터가 반듯이 붙어야만 쓸수 있는 메소드와
-    //없어도 쓸수 있는 메소드
+    String str = keyScan.nextLine();
 
     // 사용자가 입력한 문자열을 출력한다.
     System.out.println(str);

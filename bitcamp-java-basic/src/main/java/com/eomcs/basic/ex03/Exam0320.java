@@ -1,57 +1,21 @@
-//Ex0100.java
-//주제 :리터럴
-
-
+// 주제: 부동소수점을 저장하는 메모리의 크기
 
 package com.eomcs.basic.ex03;
 
 
-
-class Exam0320 {
-    public static void main(String[] args) {
-    
-        //출력 명령문
-
-        //[숫자]
-        //정수(78);
-        System.out.println(+78);
-        System.out.println(78);
-        System.out.println(-78);
-        System.out.println(0116);
-        System.out.println(0x4e);
-        System.out.println(0b01001110);
+class Exam0320 // 클래스 선언(class declaration)
+{ // 클래스 정의(class definition)
+    public static void main(String[] args) // 메서드 선언(method declaration)
+    { // 메서드 정의(method definition)
         
-
-
-
-
-        //부동소수점(실수)
+        // 부동소수점 리터럴은 기본으로 8바이트 크기를 갖는다.
         System.out.println(3.14);
-        System.out.println(31.4e-1);
-        System.out.println(314e-2);
-        System.out.println(0.0314e2);
+        System.out.println(3.14D); // D 또는 d를 붙여도 된다.
+        System.out.println(3.14d);
 
+        // 뒤에 F 나 f를 붙이면 4바이트 메모리에 저장한다.
+        System.out.println(3.14F);
+        System.out.println(3.14f);
 
-
-        //[논리]
-        //참 /거짓
-        System.out.println(true);
-        System.out.println(false);
-
-
-        //[문자]
-        //문자
-        System.out.println('A');
-        System.out.println('가');
-
-
-        //문자열
-        System.out.println("A");
-        System.out.println("가");       
-        System.out.println("");
-        System.out.println("ABC");
-        System.out.println("가나다");  
-
-    
     }
 }
