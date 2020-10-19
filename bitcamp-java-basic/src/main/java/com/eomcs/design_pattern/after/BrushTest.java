@@ -7,7 +7,7 @@ public class BrushTest {
 
 
     public static void main(String[] args) {
-
+         BrushPool brushpool
         Scanner keyboard = new Scanner(System.in);
 
         while (true) {
