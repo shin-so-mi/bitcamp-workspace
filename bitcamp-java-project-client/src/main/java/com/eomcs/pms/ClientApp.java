@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import com.eomcs.util.Prompt;
 
+
 public class ClientApp {
 
   static String host;
@@ -23,22 +24,20 @@ public class ClientApp {
 
     while (true) {
       String input = Prompt.inputString("명령> ");
-
-      if (input.equalsIgnoreCase("quit")) {
+      if (input.equalsIgnoreCase("quit"))
         break;
-      }
 
       request(input);
 
-      if (input.equalsIgnoreCase("quit"));
-      break;
+      if (input.equalsIgnoreCase("stop"))
+        break;
     }
-      System.out.println("안녕");
+    System.out.println("안녕!");
+
 
   }
-  }
 
-  private static void request(String command) {
+  private static void request(String message) {
     // 클라이언트가 서버에 stop 명령을 보내면 다음 변수를 true로 변경한다.
     boolean stop = false;
 
@@ -46,30 +45,27 @@ public class ClientApp {
         PrintWriter out = new PrintWriter(socket.getOutputStream());
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-        out.println(message);
-        out.flush();
+      out.println(message);
+      out.flush();
 
-        receiveResponse(out, in);
+      receiveResponse(out, in);
 
-
-        if (message.equalsIgnoreCase("stop")) {
-          stop = true;
-          break;
-        }
-
+      if (message.equalsIgnoreCase("stop")) {
+        stop = true;
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
 
     if (stop) {
-    // 서버를 멈추기 위해 그냥 접속했다가 끊는다.
-    try (Socket socket = new Socket(args[0], Integer.parseInt(args[1]))) {
-      // 아무것도 안한다.
-      // 서버가 stop 할 기회를 주기 위함이다.
-    } catch (Exception e) {
-      // 아무것도 안한다.
+      // 서버를 멈추기 위해 그냥 접속했다가 끊는다.
+      try (Socket socket = new Socket(host, port)) {
+        // 아무것도 안한다.
+        // 서버가 stop 할 기회를 주기 위함이다.
+      } catch (Exception e) {
+        // 아무것도 안한다.
+      }
     }
-  }
   }
 
   private static void receiveResponse(PrintWriter out, BufferedReader in) throws Exception {
