@@ -159,5 +159,29 @@ java.sql.driver 구현체를
 driver mannager 객체에 등록driver 구현을관리)
 java.sql.drivermannager 로 통해
 dbms 와 연결
+bitcamp-java-basic 
+com.somcs.jdbc 0310번 복습하기
 
- 
+ class.forName 뜻알기
+
+
+ driver manager 의 자동등록
+
+ driver manager > jdbc,drivers 시스템 프포피티에 등록된 클래스를 샐설 >등록
+    *jar 파일에서 META-INF/services/java.sql.driver 파일을 찿는다
+이 파일에 적혀있는 클래스의 인스턴스를 생성 > 등록
+ 이것을 드라이버 메니저가 한다
+
+
+dbms 에서 sql보내기
+app드라이브 메니저에게  getCinnection()달라고호출
+드라이브매니저는 mariadbconnection 에 retuern 
+mariadbconnection dbms에 연결
+
+cli라고한다
+
+sql  삽입공격
+사용자가 입력한 sql문을가지고 만들면 안된다
+검수조을 모두 기록한것(시큐어코딩가이드)
+쿠키는 하드디스크에 저장시킨다 (가뵤ㅕ운 암호화를 하긴한다)
+절대 사용자아이디암호를 저장하면안되ㅏ고 노출되어도 상관없는것을 쿠키로 저장한다
