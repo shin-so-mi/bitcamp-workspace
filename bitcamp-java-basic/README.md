@@ -185,3 +185,89 @@ sql  삽입공격
 검수조을 모두 기록한것(시큐어코딩가이드)
 쿠키는 하드디스크에 저장시킨다 (가뵤ㅕ운 암호화를 하긴한다)
 절대 사용자아이디암호를 저장하면안되ㅏ고 노출되어도 상관없는것을 쿠키로 저장한다
+
+
+
+
+statement 
+sql문법+ 값 =sql문장(dbms에 맞춰 가공) >> 가공된 sql을 dbms에 전송한다
+
+preparedstatement
+sql문법 > sql 문장 > 가공된 sql에다가 + 값을 첨부하기때문에 sql을 조작할 수 없다
+
+기술면접에서)
+statement                                  preparedstatement
+sql삽입공격이 가능하다       vs                 불가능
+(값과함께 sql문장을 만들기 때문)
+
+binaryData입력
+(붉가능하다                                      가능  (sql문과 값이 분리되어잇기때문에)
+sql문과 값을 묶어서 문자열로 표현하기에)
+
+
+실행속도 
+한번에 반복하여 실행할경우                           일단 sql 문을 dbms프로토콜에 맞춰 가공해 둔다음
+매번 sql문을 dbms프로토콜에 맞게 가공(parcing)        값과 함께 보내기에 한번에여러번 반복할경우 statement 보다 빠르다
+느릴수있다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 값을 가지고 문자열로 직접 SQL 문을 만들기                SQL 문장과 값이 분리되어 있기 때문에 작성하거나 읽기 쉽다.
+  때문에 작성하거나 읽기 힘들다.                                                                                                                              dbms의 게시글을 저장ㅎ라테이블을 만든다
+    
+    
+     테이블을 먼저 생성해준다
+                                                                                                                                                          
+       create table pms_board(
+      no int,
+      title varchar(255) not null,
+      content text not null,
+      writer varchar(30) not null,
+      cdt datetime default now(),
+      vw_cnt int default 0
+       );
+                                                                                                                                                         
+    alter table pms_board 
+  add constraint pms_board_pk primary key(no);          
+  프라이머리 키 설정법
+  
+         alter table pms_board
+       modify column no int not null auto_increment;
+           오토 만듬
+
+
+
+bitcamp-java-basic ex0310에서 try(con) 가져온다
+
+bitcamp-java-project-client (33b 를변경)
+board add handler 에서 try문 추가-> dbms로 바꾸는과정
+
+datahadlerlistener에서 방금수정한 보드부분 없엔다
+
+
+명령창에 
+위의 세가지 추가한뒤 show tables;   desc pms_board;
+확인
+
+aaddlist 는 320 try 를사용
