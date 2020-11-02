@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import com.eomcs.context.ApplicationContextListener;
+import com.eomcs.pms.dao.MemberDao;
 import com.eomcs.pms.handler.BoardAddCommand;
 import com.eomcs.pms.handler.BoardDeleteCommand;
 import com.eomcs.pms.handler.BoardDetailCommand;
@@ -91,17 +92,22 @@ public class App {
     notifyApplicationContextListenerOnServiceStarted();
 
     Map<String,Command> commandMap = new HashMap<>();
-
-    commandMap.put("/board/add", new BoardAddCommand());
-    commandMap.put("/board/list", new BoardListCommand());
-    commandMap.put("/board/detail", new BoardDetailCommand());
-    commandMap.put("/board/update", new BoardUpdateCommand());
-    commandMap.put("/board/delete", new BoardDeleteCommand());
-
     MemberListCommand memberListCommand = new MemberListCommand();
+     
+    
+    
+    BoardDao boardDao =new BoardDao();
+    MemberDao memberDao = new MemberDao();
+    
+    commandMap.put("/board/add", new BoardAddCommand(boardDao));
+    commandMap.put("/board/list", new BoardListCommand(boardDao));
+    commandMap.put("/board/detail", new BoardDetailCommand(boardDao));
+    commandMap.put("/board/update", new BoardUpdateCommand(boardDao));
+    commandMap.put("/board/delete", new BoardDeleteCommand(boardDao));
+
     commandMap.put("/member/add", new MemberAddCommand());
     commandMap.put("/member/list", memberListCommand);
-    commandMap.put("/member/detail", new MemberDetailCommand());
+    commandMap.put("/member/detail", new MemberDetailCommand(memberDao));
     commandMap.put("/member/update", new MemberUpdateCommand());
     commandMap.put("/member/delete", new MemberDeleteCommand());
 

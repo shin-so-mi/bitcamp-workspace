@@ -239,7 +239,7 @@ sql문과 값을 묶어서 문자열로 표현하기에)
     
      테이블을 먼저 생성해준다
                                                                                                                                                           
-       create table pms_board(
+       create table pms(
       no int,
       title varchar(255) not null,
       content text not null,
@@ -252,7 +252,7 @@ sql문과 값을 묶어서 문자열로 표현하기에)
   add constraint pms_board_pk primary key(no);          
   프라이머리 키 설정법
   
-         alter table pms_board
+         alter table pms_project
        modify column no int not null auto_increment;
            오토 만듬
 
@@ -271,3 +271,48 @@ datahadlerlistener에서 방금수정한 보드부분 없엔다
 확인
 
 aaddlist 는 320 try 를사용
+
+
+
+
+alter table pms_project
+add constraint pms_project_fk foreign key(owner) references pms_member(no);
+
+
+```
+create table pms_project(
+  no int not null,
+  title varchar(255) not null,
+  content text not null,
+  sdt date not null,
+  edt date not null,
+  owner int not null,
+  members varchar(255) not null
+);
+
+
+dbms에선 다대다 관계를 해결할 수없다
+이것을 어떻게 처리 할 것 인가>?/
+
+다대다 관계는 1대 다 다수관계로 변환해야한다
+
+다대다관계를 저장하는컬럼은 fk로 지정할수없다
+한컬럼에 여러개의 값이 저장되기때문이다
+
+
+
+
+create table pms_member_project(
+   member_no int not null,
+   project_no int not null
+);
+
+
+
+alter table pms_member_project
+add constraint pms_member_project_fk1 foreign key(member_no) references pms_member(no),
+add constraint pms_member_project_fk2 foreign key(project_no) references pms_project(no);
+
+
+alter table pms_project
+add constraint pms_project_pk primary key(no);
