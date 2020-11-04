@@ -1,22 +1,15 @@
 package com.eomcs.pms.handler;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.List;
-
 import com.eomcs.pms.dao.BoardDao;
 import com.eomcs.pms.domain.Board;
-
-
 
 public class BoardListCommand implements Command {
 
   BoardDao boardDao;
 
-  public BoardListCommand() {
-    boardDao = new BoardDao();
+  public BoardListCommand(BoardDao boardDao) {
+    this.boardDao = boardDao;
   }
 
   @Override
