@@ -525,3 +525,9 @@ alter table pms_project
 add constraint pms_board_fk foreign key(writer) references pms_member(no);
 
 forEach 반복문대신호푸출
+
+
+
+트렌젝션: 따로따로 해도 도ㅣ는것이 있는반면
+묶여있어야하는 경우가 있다 주문할때 결제실패할경우 취소되어야하는것과 같은기능
+여러기능을 하나의작업으로 묶는 과정을트렌젝션이라한다
