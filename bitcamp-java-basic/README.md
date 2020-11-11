@@ -531,3 +531,45 @@ forEach 반복문대신호푸출
 트렌젝션: 따로따로 해도 도ㅣ는것이 있는반면
 묶여있어야하는 경우가 있다 주문할때 결제실패할경우 취소되어야하는것과 같은기능
 여러기능을 하나의작업으로 묶는 과정을트렌젝션이라한다
+
+
+
+
+
+    퍼시스턴스 프레임워크
+    수정 ,삭제 변경,다루는 클래스 및 설정파일들집합
+      jdbc프로그래밍 하는것을 퍼시스턴스 프레임워크가 대신해준다
+      jdbc api를 호출하는 자바코드를 클래스로 만들어 제공하는것을 의미한다 
+      1 sql Maper
+      자바코드 -> framwork ->jdbc api -> dbms
+       장점: dbms에 맞춰서 하기떄문에 성능을 극한으로 끌어올릴수 있다
+      2 or MApper
+      자바코드 -> framework ->jdbc api 
+               |
+          프레임워크 전용 질의문법
+   -마이바티스
+
+
+
+
+
+
+
+or Mapper 의 문제점
+어뎁터가 없으면 안된다
+
+    xml 에서------------------
+     <![CDATA[    //
+    select 
+      board_id,
+      title, 
+      contents, 
+      created_date,
+      view_count 
+    from x_board
+    where board_id < #{haha}    // < 표시가 문법으로 오해할수잇게하는경우  <![CDATA[     ]]>   사용
+    ]]>
+
+
+
+
