@@ -1,10 +1,7 @@
 package com.eomcs.pms.handler;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.eomcs.pms.dao.ProjectDao;
-import com.eomcs.pms.dao.TaskDao;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.domain.Task;
 import com.eomcs.pms.service.ProjectService;
@@ -12,10 +9,13 @@ import com.eomcs.pms.service.TaskService;
 import com.eomcs.util.Prompt;
 
 public class ProjectDetailCommand implements Command {
+
   ProjectService projectService;
   TaskService taskService;
 
-  public ProjectDetailCommand(ProjectService projectService, TaskService taskService) {
+  public ProjectDetailCommand(
+      ProjectService projectService,
+      TaskService taskService) {
     this.projectService = projectService;
     this.taskService = taskService;
   }
@@ -45,9 +45,6 @@ public class ProjectDetailCommand implements Command {
 
       System.out.println("작업:");
       System.out.println("--------------------------------");
-
-      HashMap<String,Object> map = new HashMap<>();
-      map.put("projectNo", project.getNo());
 
       List<Task> tasks = taskService.listByProject(no);
 

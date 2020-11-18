@@ -2,18 +2,19 @@ package com.eomcs.pms.handler;
 
 import java.util.List;
 import java.util.Map;
-import com.eomcs.pms.dao.ProjectDao;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.service.ProjectService;
 import com.eomcs.util.Prompt;
 
 public class ProjectSearchCommand implements Command {
-		  ProjectService projectService;
 
-		  public ProjectSearchCommand(ProjectService projectService) {
-		    this.projectService = projectService;
-		  }
+  ProjectService projectService;
+
+  public ProjectSearchCommand(ProjectService projectService) {
+    this.projectService = projectService;
+  }
+
   @Override
   public void execute(Map<String,Object> context) {
     System.out.println("[프로젝트 검색]");

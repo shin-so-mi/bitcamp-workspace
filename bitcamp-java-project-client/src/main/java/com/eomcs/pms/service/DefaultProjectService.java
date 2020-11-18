@@ -2,7 +2,6 @@ package com.eomcs.pms.service;
 
 import java.util.List;
 import java.util.Map;
-
 import com.eomcs.pms.dao.ProjectDao;
 import com.eomcs.pms.dao.TaskDao;
 import com.eomcs.pms.domain.Project;
@@ -88,34 +87,22 @@ public class DefaultProjectService implements ProjectService {
     //
     return projectDao.findAll(keyword);
   }
-  
- public List<Project> list(Map<String,Object>keywords) throws Exception {
-	  return projectDao.findByDetailKeyword(keywords);
-  }    
- 
 
-@Override
-public int update(Project project) throws Exception {
+  @Override
+  public List<Project> list(Map<String, Object> keywords) throws Exception {
+    return projectDao.findByDetailKeyword(keywords);
+  }
 
-	return 0;
+  @Override
+  public Project get(int no) throws Exception {
+    return projectDao.findByNo(no);
+  }
+
+  @Override
+  public int update(Project project) throws Exception {
+    return projectDao.update(project);
+  }
 }
-
-@Override
-public List<Project> list() throws Exception {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Project get(int no) throws Exception {
-	// TODO Auto-generated method stub
-	return null;
-}
-}
-
-
-
-
 
 
 

@@ -44,19 +44,15 @@
        
   <select id="findAll" resultMap="ProjectMap" parameterType="string">
     <!-- 별도로 분리된 SQL 코드를 가져오고 싶다면, 다음과 같이 하라. -->
-   
-    
     <include refid="sql1"/>
-        <if test="keyword !== null">
-        where
-        p.title like concat('%', #{keyword}, '%')
-        m.name like concat('%', #{keyword}, '%')
-        m2.name like concat('%', #{keyword}, '%')
-     
+    <if test="keyword != null">
+    where 
+      p.title like concat('%', #{keyword}, '%')
+      or m.name like concat('%', #{keyword}, '%')
+      or m2.name like concat('%', #{keyword}, '%')
     </if>
     order by p.no desc
   </select>
-  
   
   <select id="findByDetailKeyword" resultMap="ProjectMap" parameterType="map">
     <include refid="sql1"/>
@@ -119,14 +115,12 @@
   </select>
   
   <update id="update" parameterType="project">
-    update pms_project set
+    update pms_project
     <set>
-    
-    <if test = "title !=null">  title = #{title}</if>
-      <if test= "content !=null">content= #{content},</if>
-      <if test = "owner > 0">owner= #{owner.no},</if>
-      <if test = "sdt !=null">sdt= #{startDate},</if>
-      <if test = "edt != null">edt= #{endDate}</if>
+      <if test="title != null">title = #{title},</if>
+      <if test="content != null">content = #{content},</if>
+      <if test="startDate != null">sdt = #{startDate},</if>
+      <if test="endDate != null">edt = #{endDate}</if>
     </set>
     where no = #{no}
   </update>

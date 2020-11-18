@@ -1,6 +1,5 @@
 package com.eomcs.pms.dao.mariadb;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
@@ -39,11 +38,9 @@ public class ProjectDaoImpl implements com.eomcs.pms.dao.ProjectDao {
   @Override
   public List<Project> findAll(String keyword) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.selectList("ProjectDao.findAll",keyword);
+      return sqlSession.selectList("ProjectDao.findAll", keyword);
     }
   }
-
-
 
   @Override
   public List<Project> findByDetailKeyword(Map<String,Object> keywords) throws Exception {
