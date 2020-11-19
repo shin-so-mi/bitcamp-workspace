@@ -1,149 +1,72 @@
 package com.eomcs.pms;
 
-import java.io.File;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import com.eomcs.context.ApplicationContextListener;
-import com.eomcs.pms.filter.CommandFilterManager;
-import com.eomcs.pms.filter.DefaultCommandFilter;
-import com.eomcs.pms.filter.FilterChain;
-import com.eomcs.pms.filter.LogCommandFilter;
-import com.eomcs.pms.handler.Request;
-import com.eomcs.pms.listener.AppInitListener;
+import com.eomcs.pms.handler.BoardHandler;
+import com.eomcs.pms.handler.MemberHandler;
+import com.eomcs.pms.handler.ProjectHandler;
+import com.eomcs.pms.handler.TaskHandler;
 import com.eomcs.util.Prompt;
 
 public class App {
 
-  // 옵저버와 공유할 맵 객체
-  Map<String,Object> context = new Hashtable<>();
+  public static void main(String[] args) {
 
-  // 옵저버를 보관할 컬렉션 객체
-  List<ApplicationContextListener> listeners = new ArrayList<>();
+    // 첫 번째 게시판에서 다룰 변수를 준비한다.
+    // - Heap 영역에 게시물 인스턴스를 보관할 배열(Board[] list)을 준비한다.
+    // - 게시글 개수를 보관할 변수(size)를 준비한다.
+    BoardHandler boardHandler = new BoardHandler();
 
-  // 옵저버를 등록하는 메서드
-  public void addApplicationContextListener(ApplicationContextListener listener) {
-    listeners.add(listener);
-  }
+    // 두 번째 게시판에서 다룰 변수를 준비한다.
+    // - 두 번째 게시판에서 사용할 list, size 변수를
+    //   BoardHandler의 설계도에 따라 Heap에 생성한다.
+    BoardHandler boardHandler2 = new BoardHandler();
 
-  // 옵저버를 제거하는 메서드
-  public void removeApplicationContextListener(ApplicationContextListener listener) {
-    listeners.remove(listener);
-  }
+    // 세 번째, 네 번째, 다섯 번째, 여섯 번째 게시판에서 다룰 변수를 각각 준비한다.
+    BoardHandler boardHandler3 = new BoardHandler();
+    BoardHandler boardHandler4 = new BoardHandler();
+    BoardHandler boardHandler5 = new BoardHandler();
+    BoardHandler boardHandler6 = new BoardHandler();
 
-  // service() 실행 전에 옵저버에게 통지한다.
-  private void notifyApplicationContextListenerOnServiceStarted() {
-    for (ApplicationContextListener listener : listeners) {
-      // 곧 서비스를 시작할테니 준비하라고,
-      // 서비스 시작에 관심있는 각 옵저버에게 통지한다.
-      // => 옵저버에게 맵 객체를 넘겨준다.
-      // => 옵저버는 작업 결과를 파라미터로 넘겨준 맵 객체에 담아 줄 것이다.
-      listener.contextInitialized(context);
-    }
-  }
+    MemberHandler memberHandler = new MemberHandler();
 
-  // service() 실행 후에 옵저버에게 통지한다.
-  private void notifyApplicationContextListenerOnServiceStopped() {
-    for (ApplicationContextListener listener : listeners) {
-      // 서비스가 종료되었으니 마무리 작업하라고,
-      // 마무리 작업에 관심있는 각 옵저버에게 통지한다.
-      // => 옵저버에게 맵 객체를 넘겨준다.
-      // => 옵저버는 작업 결과를 파라미터로 넘겨준 맵 객체에 담아 줄 것이다.
-      listener.contextDestroyed(context);
-    }
-  }
+    ProjectHandler projectHandler = new ProjectHandler();
+    projectHandler.memberHandler = memberHandler;
 
-
-  public static void main(String[] args) throws Exception {
-    App app = new App();
-
-    // 옵저버 등록
-    app.addApplicationContextListener(new AppInitListener());
-
-    app.service();
-  }
-
-  public void service() throws Exception {
-
-    notifyApplicationContextListenerOnServiceStarted();
-
-    // 필터 관리자 준비
-    CommandFilterManager filterManager = new CommandFilterManager();
-
-    // 필터를 등록한다.
-    filterManager.add(new LogCommandFilter());
-    //filterManager.add(new AuthCommandFilter());
-    filterManager.add(new DefaultCommandFilter());
-
-    // 필터가 사용할 값을 context 맵에 담는다.
-    File logFile = new File("command.log");
-    context.put("logFile", logFile);
-
-    // 필터들을 준비시킨다.
-    filterManager.init(context);
-
-    // 사용자가 입력한 명령을 처리할 필터 체인을 얻는다.
-    FilterChain filterChain = filterManager.getFilterChains();
-
-    Deque<String> commandStack = new ArrayDeque<>();
-    Queue<String> commandQueue = new LinkedList<>();
+    TaskHandler taskHandler = new TaskHandler();
+    taskHandler.memberHandler = memberHandler;
 
     loop:
       while (true) {
-        String inputStr = Prompt.inputString("명령> ");
+        String command = Prompt.inputString("명령> ");
 
-        if (inputStr.length() == 0) {
-          continue;
-        }
-
-        commandStack.push(inputStr);
-        commandQueue.offer(inputStr);
-
-        switch (inputStr) {
-          case "history": printCommandHistory(commandStack.iterator()); break;
-          case "history2": printCommandHistory(commandQueue.iterator()); break;
+        switch (command) {
+          case "/member/add": memberHandler.add(); break;
+          case "/member/list": memberHandler.list(); break;
+          case "/project/add": projectHandler.add(); break;
+          case "/project/list": projectHandler.list(); break;
+          case "/task/add": taskHandler.add(); break;
+          case "/task/list": taskHandler.list(); break;
+          case "/board/add": boardHandler.add(); break;
+          case "/board/list": boardHandler.list(); break;
+          case "/board2/add": boardHandler2.add(); break;
+          case "/board2/list": boardHandler2.list(); break;
+          case "/board3/add": boardHandler3.add(); break;
+          case "/board3/list": boardHandler3.list(); break;
+          case "/board4/add": boardHandler4.add(); break;
+          case "/board4/list": boardHandler4.list(); break;
+          case "/board5/add": boardHandler5.add(); break;
+          case "/board5/list": boardHandler5.list(); break;
+          case "/board6/add": boardHandler6.add(); break;
+          case "/board6/list": boardHandler6.list(); break;
           case "quit":
           case "exit":
             System.out.println("안녕!");
             break loop;
           default:
-            // 커맨드나 필터가 사용할 객체를 준비한다.
-            Request request = new Request(inputStr, context);
-
-            // 필터들의 체인을 실행한다.
-            if (filterChain != null) {
-              filterChain.doFilter(request);
-            }
+            System.out.println("실행할 수 없는 명령입니다.");
         }
-        System.out.println();
+        System.out.println(); // 이전 명령의 실행을 구분하기 위해 빈 줄 출력
       }
+
     Prompt.close();
-
-    // 필터들을 마무리시킨다.
-    filterManager.destroy();
-
-    notifyApplicationContextListenerOnServiceStopped();
-  }
-
-  void printCommandHistory(Iterator<String> iterator) {
-    try {
-      int count = 0;
-      while (iterator.hasNext()) {
-        System.out.println(iterator.next());
-        count++;
-
-        if ((count % 5) == 0 && Prompt.inputString(":").equalsIgnoreCase("q")) {
-          break;
-        }
-      }
-    } catch (Exception e) {
-      System.out.println("history 명령 처리 중 오류 발생!");
-    }
   }
 }

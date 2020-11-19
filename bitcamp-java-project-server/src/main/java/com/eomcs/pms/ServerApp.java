@@ -26,7 +26,7 @@ public class ServerApp {
   static boolean stop = false;
 
   // 스레드풀 준비
-  ExecutorService threadPool =  Executors.newCachedThreadPool();
+  ExecutorService threadPool = Executors.newCachedThreadPool();
 
   // 옵저버와 공유할 맵 객체
   static Map<String,Object> context = new Hashtable<>();
@@ -71,7 +71,7 @@ public class ServerApp {
         if (stop) {
           break;
         }
-        // 람다 문법 사용
+        // 직접 스레드를 생성하는 것이 아니라 스레드풀에 작업을 맡긴다.
         threadPool.execute(() -> handleClient(clientSocket));
       }
 
@@ -148,7 +148,6 @@ public class ServerApp {
       // 응답의 끝을 알리는 빈 문자열을 보낸다.
       out.println();
       out.flush();
-
 
     } catch (Exception e) {
       System.out.println("클라이언트와의 통신 오류!");
