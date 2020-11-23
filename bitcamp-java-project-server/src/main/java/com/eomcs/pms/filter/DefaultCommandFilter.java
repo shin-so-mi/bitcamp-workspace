@@ -25,7 +25,7 @@ public class DefaultCommandFilter implements CommandFilter {
 
     if (command != null) {
       try {
-        command.execute(request.getWriter(), request.getReader(), context);
+        command.execute(request);
 
       } catch (Exception e) {
         out.println("--------------------------------------------------------------");
