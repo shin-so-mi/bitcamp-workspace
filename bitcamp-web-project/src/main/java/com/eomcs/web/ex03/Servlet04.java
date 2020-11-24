@@ -34,7 +34,7 @@ public class Servlet04 extends GenericServlet {
     // 바이너리를 출력할 때 MIME 타입을 지정해야 웹 브라우저가 제대로 출력할 수 있다.
     // => 웹 브라우저가 모르는 형식을 지정하면 웹 브라우저는 처리하지 못하기 때문에
     // 그냥 다운로드 대화상자를 띄운다.
-    res.setContentType("image/jpeg");
+    res.setContentType("image/jpeg");//브라우저에게 말해줌
 
     BufferedOutputStream out = new BufferedOutputStream(res.getOutputStream());
 
@@ -46,6 +46,7 @@ public class Servlet04 extends GenericServlet {
     out.flush(); // 버퍼 데코레이터에 보관된 데이터를 클라이언트로 방출한다.
     out.close();
     in.close();
+    
   }
 }
 

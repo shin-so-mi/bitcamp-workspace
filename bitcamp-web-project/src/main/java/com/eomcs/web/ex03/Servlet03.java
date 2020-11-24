@@ -25,10 +25,10 @@ public class Servlet03 extends GenericServlet {
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
-    out.println("<head><title>servlet03</title></head>");
-    out.println("<body><h1>안녕하세요</h1></body>");
+    out.println("<head><title>servlet03</title></head>"); //부가정보
+    out.println("<body><h1>안녕하세요</h1></body>");  //화면 출력
     out.println("</html>");
   }
 }
-
+ 
 
