@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<title>소미의 연습장</title>
+<style>
+#리스트 {
+background-color: purple;
+color:white;
+
+}
+#상단바 {
+background-color: gray;
+ color: pink;
+    width:100px;
+    float: left;
+}
+
+
+
+   
+   
+ #상단바 a:hover {
+   text-decoration: underline;
+   background-color: blue;
+   color: yellow;
+   }
+   
+   #내용 {
+    border: 5px dashed pink;
+    margin-left:150px;  
+    padding-left: 10px;
+   }
+
+  #위치 {
+    background-color: gray;
+    color:pink;
+  
+    } 
+    
+    #food {
+     background-color: gray;
+    color:pink;
+    }
+    
+    
+</style>
+</head>
+
+<body>
+<div id= "리스트">
+<hi>소미소미 리스트</hi>
+</div>
+
+ <div id="상단바">
+ <ol>
+ <li><a href="#">치킨</a></li>
+  <li><a href="@">피자</a></li>
+  <li><a href="@">파스타</a></li>
+ </ol>
+ </div>
+
+<div id="내용">
+
+<div>
+<p>치킨은 예술</p>
+<p>굽네 네네 비비큐등이 있다</p>
+</div>
+
+<div>
+<p>피자는 예술</p>
+<p>피나치공 피자헛 미스터등이 있다</p>
+</div>
+
+<div>
+<p>파스타은 예술</p>
+<p>롤링파스타 니뽕내뽕등이 있다</p>
+</div>
+
+<form>  <!--  form이 잇어야 데이터를 보내쥰다  -->
+    <select name="food"> <!--  이름이 있어야 데이터를 보낸다 -->
+        <option>치킨</option> <!--  value를 주면 벨류값이름으로 서버에 보내짐 굳이 이름정하고싶을때 사용 -->
+        <option selected>난몰라</option>  <!--  기본값으로 처음에 정하게하는것 셀렉티드 -->
+        <option>피자</option>
+        <option>파스타</option>
+    </select>
+    <button>선택</button>   <!--  제출버튼 -->
+     </form>
+
+</div>
+
+<div id="위치">
+<span>한국이라면 어디든 잇음
+</span>
+</div>
+
+
+
+</body>
+</html>
