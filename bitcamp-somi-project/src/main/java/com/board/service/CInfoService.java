@@ -1,0 +1,14 @@
+package com.board.service;
+
+import java.util.List;
+
+import com.board.domain.CInfo;
+
+public interface CInfoService {
+
+  int delete(int no) throws Exception;
+  int add(CInfo cInfo) throws Exception;
+  List<CInfo> list() throws Exception;
+  int update(CInfo cInfo) throws Exception;
+
+}
