@@ -92,6 +92,7 @@ public class Servlet02 extends GenericServlet {
  * name=ABC%EA%B0%80%EA%B0%81&age=20
  */
 
+//
 // GET 요청 vs POST 요청
 // 1) 전송 데이터 용량
 // => GET
