@@ -5,27 +5,19 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.annotation.WebServlet;
+
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.service.MemberService;
 import com.eomcs.pms.service.ProjectService;
 import com.eomcs.util.Prompt;
 
-@CommandAnno("/project/add")
+@WebServlet("/project/add")
 public class ProjectAddCommand implements Command {
 
-  ProjectService projectService;
-  MemberService memberService;
-
-  public ProjectAddCommand(
-      ProjectService projectService,
-      MemberService memberService) {
-    this.projectService = projectService;
-    this.memberService = memberService;
-  }
-
-  @Override
-  public void execute(Request request) {
+	
     PrintWriter out = request.getWriter();
     BufferedReader in = request.getReader();
     Map<String,Object> session = request.getSession();

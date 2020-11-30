@@ -111,7 +111,6 @@ public class Servlet01 extends GenericServlet {
  * text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng, Accept-Encoding:
  * gzip, deflate, br Accept-Language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,la;q=0.6 빈 줄
  */
-//post방식 
 
 // HTTP 응답 프로토콜
 // => 형식

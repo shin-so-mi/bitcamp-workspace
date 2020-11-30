@@ -53,7 +53,7 @@ public class Servlet02 extends GenericServlet {
     // 반드시 getParamter()를 최초로 호출하기 전이어야 한다.
     // 한 번 getParameter()를 호출한 후에는 소용없다.
     //
- req.setCharacterEncoding("UTF-8");
+    req.setCharacterEncoding("UTF-8");
 
     String age = req.getParameter("age");
     String name = req.getParameter("name");
@@ -92,7 +92,6 @@ public class Servlet02 extends GenericServlet {
  * name=ABC%EA%B0%80%EA%B0%81&age=20
  */
 
-//
 // GET 요청 vs POST 요청
 // 1) 전송 데이터 용량
 // => GET

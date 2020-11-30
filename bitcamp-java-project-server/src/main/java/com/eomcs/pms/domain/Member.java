@@ -11,7 +11,25 @@ public class Member {
   private String tel;
   private Date registeredDate;
 
-  public int getNo() {
+  public Member() {
+	  
+  }
+  public Member(int no) {
+	  this.no= no;
+	  
+  }
+  
+  public Member(String name) {
+	  this.name = name;
+	  
+  }
+  
+  public Member(int no , String name) {
+	  this.no= no;
+	  this.name = name;
+	  
+  }
+   public int getNo() {
     return no;
   }
   public void setNo(int no) {

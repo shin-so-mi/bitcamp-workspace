@@ -38,6 +38,7 @@ public class BoardListServlet extends HttpServlet {
       out.println("<a href='form.html'>새 글</a><br>");
 
       List<Board> list = boardService.list();
+
       out.println("<table border='1'>");
       out.println("<thead><tr>" // table row
           + "<th>번호</th>" // table header
@@ -48,6 +49,7 @@ public class BoardListServlet extends HttpServlet {
           + "</tr></thead>");
 
       out.println("<tbody>");
+
       for (Board board : list) {
         out.printf("<tr>"
             + "<td>%d</td>"
