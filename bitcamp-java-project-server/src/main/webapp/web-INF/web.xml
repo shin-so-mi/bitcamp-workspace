@@ -8,19 +8,15 @@
  
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <filter-class>com.eomcs.web.filter.CharacterEncodingFilter</filter-class>
+    <filter-class>com.eomcs.pms.web.filter.CharacterEncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
-    <init-param>
-      <param-name>CharacterEncodingFilter</param-name>
-      <param-value>okok</param-value>
-    </init-param>
   </filter>
   <filter-mapping>
-    <filter-name>f1</filter-name>
-    <url-pattern>/ex05/*</url-pattern>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
   
 </web-app>
