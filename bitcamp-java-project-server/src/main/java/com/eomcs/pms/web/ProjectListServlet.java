@@ -3,7 +3,10 @@ package com.eomcs.pms.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
 import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -41,6 +44,7 @@ public class ProjectListServlet extends HttpServlet {
 
       out.println("<a href='form'>새 프로젝트</a><br>");
 
+<<<<<<< HEAD
       List<Project> list = null;
 
       String keyword = request.getParameter("keyword");
@@ -62,6 +66,9 @@ public class ProjectListServlet extends HttpServlet {
       } else {
         list = projectService.list();
       }
+=======
+      List<Project> list = projectService.list();
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
 
       out.println("<table border='1'>");
       out.println("<thead><tr>"
@@ -75,8 +82,11 @@ public class ProjectListServlet extends HttpServlet {
       out.println("<tbody>");
 
       for (Project project : list) {
+<<<<<<< HEAD
         if (project.getState() == 0) continue;
 
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
         StringBuilder members = new StringBuilder();
         for (Member member : project.getMembers()) {
           if (members.length() > 0) {
@@ -103,6 +113,7 @@ public class ProjectListServlet extends HttpServlet {
       out.println("</tbody>");
       out.println("</table>");
 
+<<<<<<< HEAD
       out.println("<p>");
       out.println("<form action='list' method='get'>");
       out.printf("검색어: <input type='text' name='keyword' value='%s'>\n",
@@ -125,6 +136,8 @@ public class ProjectListServlet extends HttpServlet {
       out.println("</form>");
       out.println("</p>");
 
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
     } catch (Exception e) {
       out.println("<h2>작업 처리 중 오류 발생!</h2>");
       out.printf("<pre>%s</pre>\n", e.getMessage());

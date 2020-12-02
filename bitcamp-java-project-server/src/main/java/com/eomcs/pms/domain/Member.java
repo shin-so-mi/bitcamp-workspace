@@ -61,12 +61,15 @@ public class Member {
     this.registeredDate = registeredDate;
     return this;
   }
+<<<<<<< HEAD
   public int getState() {
     return state;
   }
   public void setState(int state) {
     this.state = state;
   }
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
 
   public static void main(String[] args) {
     //    Member m1 = new Member();

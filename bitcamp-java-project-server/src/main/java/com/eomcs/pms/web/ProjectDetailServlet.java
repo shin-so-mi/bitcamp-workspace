@@ -55,23 +55,38 @@ public class ProjectDetailServlet extends HttpServlet {
             project.getNo());
         out.printf("프로젝트명: <input type='text' name='title' value='%s'><br>\n",
             project.getTitle());
+<<<<<<< HEAD
         out.printf("내용: <textarea name='content' rows='10' cols='70'>%s</textarea><br>\n",
+=======
+        out.printf("내용: <textarea rows='10' cols='70'>%s</textarea><br>\n",
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
             project.getContent());
         out.printf("기간: <input type='date' name='startDate' value='%s'> ~ "
             + "<input type='date' name='endDate' value='%s'><br>\n",
             project.getStartDate(),
             project.getEndDate());
         out.printf("관리자: %s<br>\n", project.getOwner().getName());
+<<<<<<< HEAD
         out.println("팀원: * 는 비활성 상태의 멤버<br>");
+=======
+        out.println("팀원: <br>");
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
 
         List<Member> members = project.getMembers();
 
         for (Member m : memberService.list()) {
+<<<<<<< HEAD
           out.printf("<input type='checkbox' name='members' value='%d' %s>%s%s, \n",
               m.getNo(),
               checkMember(members, m),
               m.getName(),
               inactiveMember(members, m));
+=======
+          out.printf("<input type='checkbox' name='members' value='%d' %s>%s, \n",
+              m.getNo(),
+              checkMember(members, m),
+              m.getName());
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
         }
         out.println("<br>");
         out.println("<button>변경</button>");
@@ -82,10 +97,15 @@ public class ProjectDetailServlet extends HttpServlet {
 
         out.println("작업:<br>");
 
+<<<<<<< HEAD
         out.printf("<a href='../task/addprojectNo=%d'>새 작업</a><br>\n",
             project.getNo());
 
         List<Task> tasks = taskService.listByProject(no);
+=======
+        List<Task> tasks = taskService.listByProject(no);
+
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
         out.println("<table border='1'>");
         out.println("<thead><tr>"
             + "<th>번호</th>"
@@ -93,7 +113,10 @@ public class ProjectDetailServlet extends HttpServlet {
             + "<th>마감일</th>"
             + "<th>작업자</th>"
             + "<th>상태</th>"
+<<<<<<< HEAD
             + "<th></th>"
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
             + "</tr></thead>");
 
         out.println("<tbody>");
@@ -112,18 +135,29 @@ public class ProjectDetailServlet extends HttpServlet {
           }
           out.printf("<tr>"
               + "<td>%d</td>"
+<<<<<<< HEAD
               + "<td><a href='../task/detail?no=%1$d'>%s</a></td>"
               + "<td>%s</td>"
               + "<td>%s</td>"
               + "<td>%s</td>"
               + "<td><a href='../task/delete?no=%1$d&projectNo=%d'>[삭제]</a></td>"
+=======
+              + "<td><a href='detail?no=%1$d'>%s</a></td>"
+              + "<td>%s</td>"
+              + "<td>%s</td>"
+              + "<td>%s</td>"
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
               + "</tr>\n",
               task.getNo(),
               task.getContent(),
               task.getDeadline(),
               task.getOwner().getName(),
+<<<<<<< HEAD
               stateLabel,
               project.getNo());
+=======
+              stateLabel);
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
         }
         out.println("</tbody>");
         out.println("</table>");
@@ -143,14 +177,21 @@ public class ProjectDetailServlet extends HttpServlet {
     out.println("</html>");
   }
 
+<<<<<<< HEAD
   private String checkMember(List<Member> projectMembers, Member member) {
     for (Member projectMember : projectMembers) {
       if (member.getNo() == projectMember.getNo() && projectMember.getState() == 1) {
+=======
+  private String checkMember(List<Member> members, Member member) {
+    for (Member m : members) {
+      if (member.getNo() == m.getNo()) {
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
         return "checked";
       }
     }
     return "";
   }
+<<<<<<< HEAD
 
   private String inactiveMember(List<Member> projectMembers, Member member) {
     for (Member projectMember : projectMembers) {
@@ -160,4 +201,6 @@ public class ProjectDetailServlet extends HttpServlet {
     }
     return "";
   }
+=======
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
 }

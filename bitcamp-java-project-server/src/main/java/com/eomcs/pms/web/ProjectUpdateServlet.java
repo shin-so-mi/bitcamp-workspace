@@ -34,7 +34,11 @@ public class ProjectUpdateServlet extends HttpServlet {
     out.println("<!DOCTYPE html>");
     out.println("<html>");
     out.println("<head>");
+<<<<<<< HEAD
     out.println("<meta http-equiv='Refresh' content='1;url=list'>");
+=======
+    //out.println("<meta http-equiv='Refresh' content='1;url=list'>");
+>>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
     out.println("<title>프로젝트변경</title></head>");
     out.println("<body>");
 
