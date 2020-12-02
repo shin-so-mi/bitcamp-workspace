@@ -3,6 +3,7 @@ package com.eomcs.pms.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.service.MemberService;
 
@@ -54,9 +56,12 @@ public class LoginServlet extends HttpServlet {
 
         } else {
           // 로그인이 성공했으면 회원 정보를
-          // 각 클라이언트의 전용 보관소인 session에 저장한다.
-          session.setAttribute("loginUser", member);
-          out.printf("<p>%s 님 반갑습니다.</p>\n", member.getName());
+        	session.setAttribute("loginUser", member);
+        	
+          response.sendRedirect("../index.html");
+         return;
+         
+     
         }
       }
 
@@ -72,5 +77,8 @@ public class LoginServlet extends HttpServlet {
 
     out.println("</body>");
     out.println("</html>");
+    
+    response.setHeader("refresh", "1;url=../index/html");
+    
   }
 }

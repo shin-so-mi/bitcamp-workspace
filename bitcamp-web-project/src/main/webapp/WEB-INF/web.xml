@@ -9,7 +9,7 @@
 <!-- 컨텍스트(웹 애플리케이션 환경) 초기화 파라미터 
   => Servlet, Listener, Filter 에서 모두 사용할 수 있다.
 -->
-<!-- 
+<!-- 모두 사용할수있다 -->
   <context-param>
     <param-name>jdbc2.driver</param-name>
     <param-value>org.mariadb.jdbc.Driver</param-value>
@@ -26,8 +26,7 @@
     <param-name>jdbc2.password</param-name>
     <param-value>1111</param-value>
   </context-param>
- -->
- 
+
 <!-- 리스너 등록 -->
 <!--  
   <listener>
@@ -116,7 +115,7 @@
   </servlet-mapping>
   -->  
 
-<!--  
+
   <servlet>
     <servlet-name>ex06.Servlet02</servlet-name>
     <servlet-class>com.eomcs.web.ex06.Servlet02</servlet-class>
@@ -148,14 +147,14 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
--->
+
 
   <!-- 세션의 타임아웃 설정하기 
        => 단위는 분(minute)이다. -->
-  <!--  
+
   <session-config>
     <session-timeout>1</session-timeout> 
   </session-config>
-  -->
+  
   
 </web-app>

@@ -74,37 +74,33 @@ public class Servlet08 extends GenericServlet {
     // 어떤 썸네일 이미지를 만들어야 하는지 설정한다.
     // Thumbnails.of(this.uploadDir + "/" + filename).size(20, 20).outputFormat("jpg")
     // .toFiles(Rename.PREFIX_DOT_THUMBNAIL);
-
     Thumbnails.of(this.uploadDir + "/" + filename)//
-        .size(20, 20)//
-        .outputFormat("jpg")//
-        .toFiles(new Rename() {
-          @Override
-          public String apply(String name, ThumbnailParameter param) {
-            return name + "_20x20";
-          }
-        });
+    .size(20, 20)//
+    .outputFormat("jpg")//
+    .toFiles(new Rename() {
+      @Override
+      public String apply(String name, ThumbnailParameter param) {
+        return name + "_20x20";
+      }
+    });
 
-    Thumbnails.of(this.uploadDir + "/" + filename)//
-        .size(80, 80)//
-        
-        .outputFormat("jpg") //
-        .crop(Positions.CENTER)
-   
-        .toFiles(Rename.PREFIX_DOT_THUMBNAIL);
+Thumbnails.of(this.uploadDir + "/" + filename)//
+    .size(60, 60)//
+    .outputFormat("jpg") //
+    .toFiles(Rename.PREFIX_DOT_THUMBNAIL);
 
-    Thumbnails.of(this.uploadDir + "/" + filename)//
-        .size(160, 160) //
-        .outputFormat("jpg") //
-        .toFiles(Rename.PREFIX_DOT_THUMBNAIL);
+Thumbnails.of(this.uploadDir + "/" + filename)//
+    .size(70, 70) //
+    .outputFormat("jpg") //
+    .toFiles(Rename.PREFIX_DOT_THUMBNAIL);
 
-    out.printf("사진=%s<br>\n", filename);
-    out.printf("<img src='../upload/%s_20x20.jpg'><br>\n", filename);
-    out.printf("<img src='../upload/%s_80x80.jpg'><br>\n", filename);
-    out.printf("<img src='../upload/%s_160x160.jpg'><br>\n", filename);
-    out.printf("<img src='../upload/%s' height='80'><br>\n", filename);
-    out.printf("<img src='../upload/%s'><br>\n", filename);
-    out.println("</body></html>");
+out.printf("사진=%s<br>\n", filename);
+out.printf("<img src='../upload/%s_20x20.jpg'><br>\n", filename);
+out.printf("<img src='../upload/%s_60x60.jpg'><br>\n", filename);
+out.printf("<img src='../upload/%s_70x70.jpg'><br>\n", filename);
+out.printf("<img src='../upload/%s' height='80'><br>\n", filename);
+out.printf("<img src='../upload/%s'><br>\n", filename);
+out.println("</body></html>");
   }
 }
 

@@ -27,7 +27,7 @@ public class BoardAddServlet extends HttpServlet {
         (BoardService) ctx.getAttribute("boardService");
 
     // 클라이언트가 POST 요청할 때 보낸 데이터를 읽는다.
-   // request.setCharacterEncoding("UTF-8");
+    //request.setCharacterEncoding("UTF-8");
 
     Board board = new Board();
     board.setTitle(request.getParameter("title"));
@@ -57,13 +57,8 @@ public class BoardAddServlet extends HttpServlet {
       out.println("<p>게시글을 등록하였습니다.</p>");
 
     } catch (Exception e) {
-      out.println("<h2>작업 처리 중 오류 발생!</h2>");
-      out.printf("<pre>%s</pre>\n", e.getMessage());
-
-      StringWriter errOut = new StringWriter();
-      e.printStackTrace(new PrintWriter(errOut));
-      out.println("<h3>상세 오류 내용</h3>");
-      out.printf("<pre>%s</pre>\n", errOut.toString());
+    	request.setAttribute("exception", e);
+    	request.getRequstDispatcher("/error").f
     }
 
     out.println("</body>");
