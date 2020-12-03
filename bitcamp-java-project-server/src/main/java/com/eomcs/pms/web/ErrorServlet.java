@@ -3,21 +3,19 @@ package com.eomcs.pms.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("error")
-public class ArrorServlet extends HttpServlet {
+@WebServlet("/error")
+public class ErrorServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+  protected void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-
 
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
@@ -25,24 +23,22 @@ public class ArrorServlet extends HttpServlet {
     out.println("<!DOCTYPE html>");
     out.println("<html>");
     out.println("<head>");
-    out.println("<meta http-equiv='Refresh' content='1;url=list'>");
-    out.println("<title>에러</title></head>");
+    out.println("<title>서버오류</title></head>");
     out.println("<body>");
 
-      out.println("<h1>서버오류</h1>");
+    out.println("<h1>서버 오류</h1>");
 
-      
-       Exception e = (Exception) request.getAttribute("exception");
-      out.printf("<pre>%s</pre>\n", e.getMessage());
+    Exception e = (Exception) request.getAttribute("exception");
 
-      StringWriter errOut = new StringWriter();
-      e.printStackTrace(new PrintWriter(errOut));
-    
-      out.printf("<pre>%s</pre>\n", errOut.toString());
-    
+    out.printf("<pre>%s</pre>\n", e.getMessage());
+
+    out.println("<h3>상세 오류 내용</h3>");
+
+    StringWriter errOut = new StringWriter();
+    e.printStackTrace(new PrintWriter(errOut));
+    out.printf("<pre>%s</pre>\n", errOut.toString());
 
     out.println("</body>");
     out.println("</html>");
   }
 }
-

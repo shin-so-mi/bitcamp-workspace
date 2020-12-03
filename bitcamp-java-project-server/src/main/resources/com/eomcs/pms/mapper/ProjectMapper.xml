@@ -107,7 +107,6 @@
     </foreach>
   </update>
   
-<<<<<<< HEAD
   <update id="updateActiveMembers" parameterType="project">
     update pms_member_project set
       state = 1 
@@ -118,8 +117,6 @@
     </foreach>
   </update>
   
-=======
->>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
   <select id="findByNo" resultMap="ProjectMap" parameterType="int">
     select 
       p.no, 
@@ -139,10 +136,6 @@
       left outer join pms_member m2 on mp.member_no=m2.no
     where 
       p.no = #{no} 
-<<<<<<< HEAD
-=======
-      and mp.state = 1
->>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
   </select>
   
   <update id="update" parameterType="project">

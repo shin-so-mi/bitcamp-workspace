@@ -80,7 +80,6 @@ public class ProjectDaoImpl implements com.eomcs.pms.dao.ProjectDao {
   @Override
   public int updateInactiveMembers(Project project) {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-<<<<<<< HEAD
       return sqlSession.update("ProjectDao.updateInactiveMembers", project);
     }
   }
@@ -89,9 +88,6 @@ public class ProjectDaoImpl implements com.eomcs.pms.dao.ProjectDao {
   public int updateActiveMembers(Project project) {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.update("ProjectDao.updateActiveMembers", project);
-=======
-      return sqlSession.insert("ProjectDao.updateInactiveMembers", project);
->>>>>>> c0a41f2bae9e14673d63a75bca7abcca452ac567
     }
   }
 }
