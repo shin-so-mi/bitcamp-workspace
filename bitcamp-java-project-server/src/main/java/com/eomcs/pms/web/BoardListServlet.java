@@ -2,14 +2,12 @@ package com.eomcs.pms.web;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.eomcs.pms.domain.Board;
 import com.eomcs.pms.service.BoardService;
 
@@ -40,9 +38,7 @@ public class BoardListServlet extends HttpServlet {
 
     } catch (Exception e) {
       request.setAttribute("exception", e);
-      request.getRequestDispatcher("/error").forward(request, response);
-      return;
+      request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
   }
 }
-

@@ -20,7 +20,7 @@
 pageContext.setAttribute("name", "유관순");
 %>
 <c:out value="임꺽정"/><br>
-<c:out value="${null}" default="홍길동"/><br>
+<c:out value="${null}" default="홍길동"/><br> <!null을  괄호없이사용할경우 문자열이되어버린다 괄호필수>
 <c:out value="${null}">홍길동</c:out><br>
 <c:out value="${'임꺽정'}" default="홍길동"/><br>
 <c:out value="${name}" default="홍길동"/><br>

@@ -17,7 +17,7 @@ session.setAttribute("name", "유관순");
 application.setAttribute("name", "안중근");
 %>
 
-PageContext 보관소 : ${pageScope.name}<br>
+PageContext 보관소 : ${pageScope.name}<br>  < 이것을사용하기>
 PageContext 보관소 : <%=pageContext.getAttribute("name")%><br>
 
 ServletRequest 보관소 : ${requestScope.name}<br>

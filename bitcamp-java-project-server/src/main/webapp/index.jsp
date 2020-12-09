@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome!</title>
+<title>jsp</title>
 </head>
 <body>
-<h1>환영합니다!</h1>
-<p>okok</p>
+<h1>Hello, JSP!</h1>
+<p>okok!</p>
 </body>
 </html>

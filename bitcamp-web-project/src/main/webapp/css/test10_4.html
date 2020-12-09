@@ -13,7 +13,7 @@
   }
 
   div {
-    border: 1px solid black;
+    border: 1px solid black;      /* 인라인- 사용가능  실무에선 인라인보단 플롯사용*/
     margin: 10px;
     padding: 20px;
     width: 140px;
@@ -25,7 +25,11 @@
     /* text-align: center; */
   }
 
+div > ing {
+height: 80px;
+}     /* 썸네일을 사용햇기떄문에 비율은 맞는다 넓이는같으니 높이를 맞춘다*/ 
 
+안쪾여백을 준다 패딩*/
 
   </style>
 </head>
@@ -39,8 +43,8 @@
     <img src="http://image.auction.co.kr/itemimage/97/72/f1/9772f1972.jpg">
     <p>무료배송 헤드셋</p>
   </div>
-
-  <div>
+ <!-- 여기에 엔터 잇으면 화면에도 공백생김-->
+   <div>
     <img src="http://image.auction.co.kr/itemimage/e5/7b/e7/e57be7302.jpg">
     <p>게이밍 헤드셋</p>
   </div>
