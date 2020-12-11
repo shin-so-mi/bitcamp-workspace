@@ -18,13 +18,28 @@ public class Servlet31 extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
+
     HttpSession session = request.getSession();
     session.setAttribute("v1", "aaa");
 
     response.setContentType("text/plain;charset=UTF-8");
     PrintWriter out = response.getWriter();
-    out.println("/ex11/s31 실행함!");
+    out.println("/ex11/s31 실행");
+
+
+
+
+
+
+
+
+
+
   }
+
+
+
+
 }
 
 
