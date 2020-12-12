@@ -21,11 +21,10 @@ public class SqlSessionFactoryProxy implements SqlSessionFactory {
   boolean inTransaction = false; // 트랜잭션이 시작되었다면,
   SqlSessionProxy currentSqlSession;
 
-  public SqlSessionFactoryProxy()  throws Exception {
+  public SqlSessionFactoryProxy() throws Exception {
     // 생성자에서 원래의 구현체를 받아 보관해 둔다.
     this.original = new SqlSessionFactoryBuilder().build(
         Resources.getResourceAsStream("com/eomcs/pms/conf/mybatis-config.xml"));
-
   }
 
   // 기존 클래스에 없는 메서드를 추가한다.

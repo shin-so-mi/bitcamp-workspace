@@ -10,6 +10,7 @@ import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.domain.Task;
 import com.eomcs.pms.service.ProjectService;
 import com.eomcs.pms.service.TaskService;
+
 @Controller
 public class TaskAddController {
 
@@ -22,7 +23,6 @@ public class TaskAddController {
     this.projectService = projectService;
     this.taskService = taskService;
   }
-
 
   @RequestMapping("/task/add")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

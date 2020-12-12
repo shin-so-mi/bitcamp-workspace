@@ -6,9 +6,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
-@Controller
-public class LogoutController  {
 
+@Controller
+public class LogoutController {
 
   @RequestMapping("/auth/logout")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

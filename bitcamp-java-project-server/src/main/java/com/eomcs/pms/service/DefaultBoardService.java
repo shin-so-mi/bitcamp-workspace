@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import com.eomcs.pms.dao.BoardDao;
 import com.eomcs.pms.domain.Board;
+
 @Service
 public class DefaultBoardService implements BoardService {
 

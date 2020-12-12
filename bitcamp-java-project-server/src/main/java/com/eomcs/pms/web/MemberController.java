@@ -1,9 +1,8 @@
 package com.eomcs.pms.web;
 
 import java.util.UUID;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.ServletContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
@@ -12,31 +11,34 @@ import net.coobird.thumbnailator.ThumbnailParameter;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import net.coobird.thumbnailator.name.Rename;
+
 @Controller
-public class MemberAddController  {
+@RequestMapping("/member")
+public class MemberController {
 
-  MemberService memberService;
-
-  public MemberAddController(MemberService memberService) {
-    this.memberService = memberService;
-  }
+  @Autowired MemberService memberService;
+  @Autowired ServletContext servletContext;
 
 
-  @RequestMapping("/member/add")
-  public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+  @RequestMapping("add")
+  public String add(
+      String name,
+      String email,
+      String password,
+      String tel,
+      part photoFile) throws Exception {
 
     Member member = new Member();
-    member.setName(request.getParameter("name"));
-    member.setEmail(request.getParameter("email"));
-    member.setPassword(request.getParameter("password"));
-    member.setTel(request.getParameter("tel"));
-
-    Part photoPart = request.getPart("photo");
+    member.setName(name);
+    member.setEmail(email);
+    member.setPassword(password);
+    member.setTel(tel);
 
     String filename = UUID.randomUUID().toString();
-    String saveFilePath = request.getServletContext().getRealPath("/upload/" + filename);
+    String saveFilePath = servletContext.getRealPath("/upload/" + filename);
 
-    photoPart.write(saveFilePath);
+    photoFile.write(saveFilePath);
 
     member.setPhoto(filename);
 
@@ -45,6 +47,29 @@ public class MemberAddController  {
     memberService.add(member);
     return "redirect:list";
   }
+
+  @RequestMapping("delete")
+  public String execute(int no) throws Exception {
+
+    if (memberService.delete(no) == 0) {
+      throw new Exception("해당 번호의 회원이 없습니다.");
+
+    }
+    return "redirect:list";
+  }
+
+  @RequestMapping("detail")
+  public String execute(int no) throws Exception {
+
+
+
+    Member member = memberService.get(no);
+    if (member == null) {
+      throw new Exception("해당 회원이 없습니다!");
+    }
+
+  }
+
 
   private void generatePhotoThumbnail(String saveFilePath) {
     try {

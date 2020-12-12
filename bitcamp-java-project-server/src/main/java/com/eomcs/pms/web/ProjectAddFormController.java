@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.service.MemberService;
+
 @Controller
-public class ProjectAddFormController  {
+public class ProjectAddFormController {
 
   MemberService memberService;
 
   public ProjectAddFormController(MemberService memberService) {
     this.memberService = memberService;
   }
-
 
   @RequestMapping("/project/form")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

@@ -8,8 +8,9 @@ import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.service.MemberService;
 import com.eomcs.pms.service.ProjectService;
 import com.eomcs.pms.service.TaskService;
+
 @Controller
-public class ProjectDetailController  {
+public class ProjectDetailController {
 
   ProjectService projectService;
   MemberService memberService;
@@ -23,7 +24,6 @@ public class ProjectDetailController  {
     this.memberService = memberService;
     this.taskService = taskService;
   }
-
 
   @RequestMapping("/project/detail")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.service.ProjectService;
+
 @Controller
-public class ProjectUpdateController  {
+public class ProjectUpdateController {
 
   ProjectService projectService;
 
   public ProjectUpdateController(ProjectService projectService) {
     this.projectService = projectService;
   }
-
 
   @RequestMapping("/project/update")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

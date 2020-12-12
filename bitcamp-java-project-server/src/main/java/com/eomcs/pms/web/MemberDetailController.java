@@ -6,15 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.service.MemberService;
+
 @Controller
-public class MemberDetailController  {
+public class MemberDetailController {
 
   MemberService memberService;
 
   public MemberDetailController(MemberService memberService) {
     this.memberService = memberService;
   }
-
 
   @RequestMapping("/member/detail")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

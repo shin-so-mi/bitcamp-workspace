@@ -12,15 +12,15 @@ import net.coobird.thumbnailator.ThumbnailParameter;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import net.coobird.thumbnailator.name.Rename;
+
 @Controller
-public class MemberUpdatePhotoController  {
+public class MemberUpdatePhotoController {
 
   MemberService memberService;
 
   public MemberUpdatePhotoController(MemberService memberService) {
     this.memberService = memberService;
   }
-
 
   @RequestMapping("/member/updatePhoto")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

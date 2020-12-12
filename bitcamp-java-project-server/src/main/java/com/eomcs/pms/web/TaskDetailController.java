@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Task;
 import com.eomcs.pms.service.ProjectService;
 import com.eomcs.pms.service.TaskService;
+
 @Controller
-public class TaskDetailController  {
+public class TaskDetailController {
 
   ProjectService projectService;
   TaskService taskService;
@@ -21,7 +22,6 @@ public class TaskDetailController  {
   }
 
   @RequestMapping("/task/detail")
-
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     response.setContentType("text/html;charset=UTF-8");

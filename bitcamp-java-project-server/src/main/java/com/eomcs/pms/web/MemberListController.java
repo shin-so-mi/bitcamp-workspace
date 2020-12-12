@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.service.MemberService;
+
 @Controller
 public class MemberListController {
 
@@ -15,7 +16,6 @@ public class MemberListController {
   public MemberListController(MemberService memberService) {
     this.memberService = memberService;
   }
-
 
   @RequestMapping("/member/list")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

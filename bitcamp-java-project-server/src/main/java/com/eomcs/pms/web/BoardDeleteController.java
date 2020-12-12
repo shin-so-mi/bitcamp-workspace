@@ -2,16 +2,18 @@ package com.eomcs.pms.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.service.BoardService;
+
 @Controller
-public class BoardDeleteController  {
+public class BoardDeleteController {
 
-  @Autowired   BoardService boardService;
+  BoardService boardService;
 
-
+  public BoardDeleteController(BoardService boardService) {
+    this.boardService = boardService;
+  }
 
   @RequestMapping("/board/delete")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

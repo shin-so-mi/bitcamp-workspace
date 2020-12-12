@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Member;
 import com.eomcs.pms.domain.Task;
 import com.eomcs.pms.service.TaskService;
+
 @Controller
-public class TaskUpdateController  {
+public class TaskUpdateController {
 
   TaskService taskService;
 
   public TaskUpdateController(TaskService taskService) {
     this.taskService = taskService;
   }
-
 
   @RequestMapping("/task/update")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

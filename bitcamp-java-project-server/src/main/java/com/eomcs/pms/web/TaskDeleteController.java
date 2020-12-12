@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.service.TaskService;
+
 @Controller
 public class TaskDeleteController {
 
@@ -13,7 +14,6 @@ public class TaskDeleteController {
   public TaskDeleteController(TaskService taskService) {
     this.taskService = taskService;
   }
-
 
   @RequestMapping("/task/delete")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

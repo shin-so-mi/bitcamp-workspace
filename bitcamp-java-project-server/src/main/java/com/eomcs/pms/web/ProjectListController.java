@@ -8,15 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.eomcs.pms.domain.Project;
 import com.eomcs.pms.service.ProjectService;
+
 @Controller
-public class ProjectListController  {
+public class ProjectListController {
 
   ProjectService projectService;
 
   public ProjectListController(ProjectService projectService) {
     this.projectService = projectService;
   }
-
 
   @RequestMapping("/project/list")
   public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
