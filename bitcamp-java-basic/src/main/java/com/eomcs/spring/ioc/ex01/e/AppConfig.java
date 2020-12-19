@@ -12,3 +12,4 @@ public class AppConfig {
     return new Car();
   }
 }
+//리턴값을 c1이라고 저장해라 ~ 라는것

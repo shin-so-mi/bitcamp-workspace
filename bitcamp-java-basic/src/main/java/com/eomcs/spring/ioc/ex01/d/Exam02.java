@@ -23,3 +23,8 @@ public class Exam02 {
 }
 
 
+//에노테이션을 빈으로 다루는 AnnotationConfigApplicationContext 는 
+//AppConfig.class 여기 서 가져옴 
+//실행해보니 기본객체,설정 파일들이 자동생성됨
+
+//
