@@ -20,7 +20,8 @@ public class Servlet02 extends GenericServlet {
 
     // 한글 깨짐 처리하기
     // => 출력 스트림을 꺼내기 전에
-    //    출력 스트림이 사용할 문자표(charset)를 지정하라.
+
+    // 출력 스트림이 사용할 문자표(charset)를 지정하라.
     // => 반드시 출력 스트림을 얻기 전에 설정해야 한다.
     //      res.setContentType("MIME Type;charset=문자표이름");
     //

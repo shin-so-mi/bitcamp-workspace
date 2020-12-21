@@ -163,10 +163,10 @@ gradle 을 실행하여 이클립스 IDE 용 웹 프로젝트 관련 파일을 �
 ## src-08 : SerlvetContainerInitializer 구현체의 활용
 
 - Spring WebMVC의 WebApplicationInitializer를 이해하기 위한 기반 기술 소개.
-- bitcamp-java-web-library 프로젝트 준비
+- eomcs-web-library 프로젝트 준비
   - 자세한 것은 해당 프로젝트의 README.md 파일을 읽어 볼 것.
-- bitcamp-java-spring-webmvc/lib 폴더 생성
-  - bitcamp-java-web-library.jar 파일 넣기
+- eomcs-spring-webmvc/lib 폴더 생성
+  - -web-library.jar 파일 넣기
 - build.gradle 에 lib 폴더에 있는 .jar 파일을 의존 라이브러리에 추가하기
 - MyWebInitializerImpl 클래스 생성
   - 이 클래스에서 DispatcherServlet 서블릿 등록하기
@@ -176,7 +176,7 @@ gradle 을 실행하여 이클립스 IDE 용 웹 프로젝트 관련 파일을 �
 ## src-09 : WebApplicationInitializer 구현체를 통해 DispatcherServlet 등록하기
 
 - build.gradle 변경
-  - 기존에 테스트를 위해 포함했던 bitcamp-java-web-library.jar 파일 제거
+  - 기존에 테스트를 위해 포함했던 eomcs-web-library.jar 파일 제거
 - WebApplicationInitializerImpl 생성
   - 직접 IoC 컨테이너 준비
   - DispatcherServlet 생성
@@ -194,7 +194,38 @@ gradle 을 실행하여 이클립스 IDE 용 웹 프로젝트 관련 파일을 �
   - 직접 인터페이스를 구현하는 대신에 추상 클래스를 상속 받아 적절한 메서드를 오버라이딩 한다.
   - AbstractDispatcherServletInitializer 클래스를 상속 받기
 
-## src-12 : Request Handler 정의하는 방법
+## src-12 : WebApplicationInitializer 구현체를 통해 DispatcherServlet 등록하기 응용 - XML 설정
+
+- AppDispatcherServletInitializer 생성
+  - ContextLoaderListener가 사용할 IoC 컨테이너 준비
+  - DispatcherServlet이 사용할 IoC 컨테이너 준비
+  - `/app/*` URL 매핑
+  - 서블릿 이름은 `app` 으로 설정
+- AdminDispatcherServletInitializer 생성
+  - ContextLoaderListener가 사용할 IoC 컨테이너 준비하지 않는다.
+    - 다른 서블릿이 이미 준비했기 때문이다.
+  - DispatcherServlet이 사용할 IoC 컨테이너 준비
+  - `/admin/*` URL 매핑
+  - 서블릿 이름은 `admin` 으로 설정
+
+## src-13 : WebApplicationInitializer 구현체를 통해 DispatcherServlet 등록하기 응용 - Java Config 설정
+
+- RootConfig 생성
+  - ContextLoaderListener의 IoC 컨테이너가 사용할 Java Config 클래스
+- AppServletConfig 생성
+  - `app` DispatcherServlet의 IoC 컨테이너가 사용할 Java Config 클래스
+- AdminServletConfig 생성
+  - `admin` DispatcherServlet의 IoC 컨테이너가 사용할 Java Config 클래스
+- AppDispatcherServletInitializer 생성
+  - AbstractAnnotationConfigDispatcherServletInitializer 를 상속 받는다.
+  - `/app/*` URL 매핑
+  - 서블릿 이름은 `app` 으로 설정
+- AdminDispatcherServletInitializer 생성
+  - AbstractAnnotationConfigDispatcherServletInitializer 를 상속 받는다.
+  - `/admin/*` URL 매핑
+  - 서블릿 이름은 `admin` 으로 설정
+    -
+## src-14 : Request Handler 정의하는 방법
 
 - @Controller를 사용하여 페이지 컨트롤러 표시하기
 - Request Handler의 아규먼트
